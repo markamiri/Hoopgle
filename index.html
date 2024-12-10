@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        body.dark-mode .container {
+            background-color: #1e1e1e;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .chat-box {
+            padding: 20px;
+            overflow-y: scroll;
+            height: 400px;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            clear: both;
+        }
+
+        .user-message {
+            background-color: #e2f7fd;
+            border-radius: 5px;
+            padding: 10px;
+            display: inline-block;
+            max-width: 70%;
+            float: right;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        body.dark-mode .user-message {
+            background-color: #3a3a3a;
+            color: #ffffff;
+        }
+
+        .bot-message {
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            padding: 10px;
+            display: inline-block;
+            max-width: 70%;
+            float: left;
+        }
+
+        body.dark-mode .bot-message {
+            background-color: #2a2a2a;
+            color: #ffffff;
+        }
+
+        .input-box {
+            padding: 10px;
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            overflow: hidden;
+        }
+
+        body.dark-mode .input-box {
+            background-color: #1e1e1e;
+            border-top: 1px solid #333;
+        }
+
+        .input-box input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            float: left;
+        }
+
+        body.dark-mode .input-box input[type="text"] {
+            background-color: #2a2a2a;
+            color: #ffffff;
+            border: 1px solid #333;
+        }
+
+        .input-box input[type="submit"] {
+            padding: 5px 15px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .dark-mode-toggle {
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+    <!-- Include fuzzball.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/fuzzball.js/dist/fuzzball.min.js"></script>
+</head>
+
+<body>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    <div class="container">
+        <div class="chat-box" id="chat-box">
+            <div class="bot-message">Regular season or Playoff stats?</div>
+        </div>
+        <div class="input-box">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <input type="submit" value="Send" onclick="sendMessage()">
+        </div>
+    </div>
+
+    <script>
+        let currentStage = 'initial';
+        let year, players, urlPlayerName, closestName, closestStatKey;
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        async function sendMessage() {
+            const userInput = document.getElementById("user-input").value.trim();
+            if (userInput === "") {
+                return;
+            }
+
+            const chatBox = document.getElementById("chat-box");
+
+            // Add user message to chat
+            const userMessage = document.createElement("div");
+            userMessage.className = "message user-message";
+            userMessage.textContent = userInput;
+            chatBox.appendChild(userMessage);
+
+            let response;
+            let payload = { message: userInput };
+
+            if (currentStage === 'initial') {
+                response = await fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+            } else if (currentStage === 'year') {
+                response = await fetch('/year', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+            } else if (currentStage === 'player') {
+                payload.players = players;
+                response = await fetch('/player', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+            } else if (currentStage === 'stat') {
+                payload.year = year;
+                payload.url_playername = urlPlayerName;
+                payload.closests_name = closestName;
+                response = await fetch('/stat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+            } else if (currentStage === 'overunder') {
+                response = await fetch('/overunder', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+            } else if (currentStage === 'line') {
+                payload.cat_index = closestStatKey;
+                payload.player_link = urlPlayerName;
+                payload.closest_ou_key = closestName;
+                payload.closests_name = closestName;
+                payload.closest_stat_key = closestStatKey;
+                payload.year = year;
+                response = await fetch('/line', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+            }
+
+            const data = await response.json();
+            const botMessageText = data.message;
+
+            // Add bot response to chat
+            const botMessage = document.createElement("div");
+            botMessage.className = "message bot-message";
+            botMessage.textContent = botMessageText;
+            chatBox.appendChild(botMessage);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Update the state based on the response
+            if (data.stage) {
+                currentStage = data.stage;
+                if (currentStage === 'player') {
+                    players = data.players;
+                    year = data.year;
+                } else if (currentStage === 'stat') {
+                    closestName = data.closests_name;
+                    urlPlayerName = data.url_playername;
+                } else if (currentStage === 'overunder') {
+                    closestStatKey = data.cat_index;
+                }
+            }
+
+            document.getElementById("user-input").value = "";
+        }
+    </script>
+</body>
+
+</html>

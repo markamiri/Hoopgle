@@ -1,0 +1,453 @@
+Player	From	To	Pos	Ht	Wt	Birth Date	Colleges
+Arvydas Sabonis*	1996	2003	C	7-3	279	December 19, 1964	
+Domantas Sabonis	2017	2024	C-F	6-10	240	May 3, 1996	Gonzaga
+Robert Sacre	2013	2016	C	7-0	270	June 6, 1989	Gonzaga
+Ed Sadowski	1947	1950	C	6-5	240	July 11, 1915	Seton Hall
+Kenny Sailors	1947	1951	G	5-10	175	January 14, 1921	Wyoming
+John Salley	1987	2000	F-C	6-11	230	May 16, 1964	Georgia Tech
+John Salmons	2003	2015	G	6-7	210	December 12, 1979	Miami (FL)
+Al Salvadori	1968	1968	F	6-9	220	May 6, 1945	South Carolina
+Kevin Salvadori	1997	1998	C	7-0	231	December 30, 1970	UNC
+Soumaila Samake	2001	2003	C	7-0	230	March 18, 1978	
+Luka Šamanić	2020	2024	F	6-10	227	January 9, 2000	
+Cheikh Samb	2008	2009	C	7-1	245	October 22, 1984	
+Brandon Sampson	2019	2019	G	6-5	184	May 1, 1997	LSU
+JaKarr Sampson	2015	2021	G-F	6-7	214	March 20, 1993	St. John's
+Jamal Sampson	2003	2007	F-C	6-11	235	May 15, 1983	California
+Ralph Sampson*	1984	1992	C-F	7-4	228	July 7, 1960	Virginia
+Jermaine Samuels	2024	2024	F	6-7	230	November 13, 1998	Villanova
+Samardo Samuels	2011	2013	F	6-9	260	January 9, 1989	Louisville
+Pepe Sánchez	2001	2003	G	6-4	195	May 8, 1977	Temple
+Al Sanders	1973	1973	F	6-7	240	January 1, 1950	LSU
+Frankie Sanders	1979	1981	F-G	6-6	200	January 23, 1957	Southern University and A&M College
+Jeff Sanders	1990	1993	F	6-8	225	January 14, 1966	Georgia Southern University
+Larry Sanders	2011	2017	C-F	6-11	235	November 21, 1988	VCU
+Melvin Sanders	2006	2006	G-F	6-5	210	January 3, 1981	Seward County Community College, Oklahoma State
+Mike Sanders	1983	1993	F-G	6-6	210	May 7, 1960	UCLA
+Tom Sanders*	1961	1973	F	6-6	210	November 8, 1938	NYU
+Ron Sanford	1972	1972	F	6-9	215	June 11, 1946	New Mexico
+Adama Sanogo	2024	2024	F	6-9	245	February 12, 2002	UConn
+Daniel Santiago	2001	2005	C	7-1	256	June 24, 1976	New Mexico, Saint Vincent College
+Bob Santini	1956	1956	F	6-5	190	February 17, 1935	Iona College
+Gui Santos	2024	2024	F	6-8	209	June 22, 2002	
+Wayne Sappleton	1985	1985	F	6-9	215	November 17, 1960	Loyola Chicago
+Dario Šarić	2017	2024	F-C	6-10	225	April 8, 1994	
+Olivier Sarr	2022	2024	C	7-0	237	February 20, 1999	Wake Forest, Kentucky
+Jason Sasser	1997	1999	F	6-7	225	January 13, 1974	Texas Tech
+Jeryl Sasser	2002	2003	G	6-6	200	February 13, 1979	SMU
+Marcus Sasser	2024	2024	G	6-2	195	September 21, 2000	Houston
+Tomáš Satoranský	2017	2022	G	6-7	210	October 30, 1991	
+Kenny Satterfield	2002	2003	G	6-2	186	April 10, 1981	Cincinnati
+Pep Saul	1950	1955	G-F	6-2	185	February 16, 1924	Seton Hall
+Woody Sauldsberry	1958	1966	F-C	6-7	220	July 11, 1934	Texas Southern
+Glynn Saulters	1969	1969	G	6-2	175	February 10, 1945	Louisiana-Monroe
+Fred Saunders	1975	1978	F	6-7	210	June 13, 1951	Syracuse
+Don Savage	1952	1957	F-G	6-3	205	April 9, 1928	LeMoyne College
+Predrag Savović	2003	2003	G	6-6	225	May 21, 1976	UAB, Hawaii
+Alan Sawyer	1951	1951	F	6-5	195	January 1, 1928	UCLA
+Brian Scalabrine	2002	2012	F	6-9	241	March 18, 1978	USC
+Alex Scales	2006	2006	G	6-4	185	July 3, 1978	Oregon
+DeWayne Scales	1981	1984	F	6-8	208	December 28, 1958	LSU
+Frank Schade	1973	1973	G	6-1	170	January 22, 1950	University of Wisconsin-Eau Claire
+Ben Schadler	1948	1948	F	6-0	185	March 9, 1924	Northwestern
+Herm Schaefer	1949	1950	G-F	6-0	175	December 20, 1918	Indiana
+Billy Schaeffer	1974	1976	F	6-5	200	December 11, 1951	St. John's
+Bob Schafer	1956	1957	G	6-3	195	March 29, 1933	Villanova
+Jordan Schakel	2022	2023	F	6-6	200	June 13, 1998	San Diego State
+Ben Scharnus	1947	1949	F	6-2	173	December 11, 1917	Seton Hall
+Marv Schatzman	1950	1950	F	6-5	200	February 18, 1927	Saint Louis
+Fred Schaus	1950	1954	F	6-5	205	June 30, 1925	West Virginia
+Danny Schayes	1982	1999	C-F	6-11	235	May 10, 1959	Syracuse
+Dolph Schayes*	1950	1964	F-C	6-8	220	May 19, 1928	NYU
+Ossie Schectman	1947	1947	G	6-0	175	March 30, 1919	Long Island University
+Steve Scheffler	1991	1997	C-F	6-9	250	September 3, 1967	Purdue
+Tom Scheffler	1985	1985	C	6-11	240	October 27, 1954	Purdue
+Dave Schellhase	1967	1968	G	6-3	205	October 14, 1944	Purdue
+Luke Schenscher	2006	2007	C	7-1	255	December 31, 1982	Georgia Tech
+Herb Scherer	1951	1952	C	6-9	212	December 21, 1928	Long Island University
+Dwayne Schintzius	1991	1999	C	7-1	260	October 14, 1968	Florida
+Dale Schlueter	1969	1978	C	6-10	225	November 12, 1945	Colorado State
+Otto Schnellbacher	1949	1949	F-G	6-4	185	April 15, 1923	Kansas
+Dick Schnittker	1951	1958	F	6-5	200	May 27, 1928	Ohio State
+Russ Schoene	1983	1989	F-C	6-10	210	April 16, 1960	Chattanooga
+Admiral Schofield	2020	2024	G-F	6-5	241	March 30, 1997	Tennessee
+Dave Scholz	1970	1970	F	6-8	220	April 12, 1948	Illinois
+Milt Schoon	1947	1950	C	6-7	230	February 25, 1922	Valparaiso
+Detlef Schrempf	1986	2001	F-C	6-10	235	January 21, 1963	Washington
+Dennis Schröder	2014	2024	G	6-1	172	September 15, 1993	
+Howie Schultz	1950	1953	C-F	6-6	200	July 3, 1922	Hamline University
+Dick Schulz	1947	1950	F-G	6-2	192	January 3, 1917	Wisconsin
+Roger Schurig	1968	1968	G	6-3	185	April 3, 1942	Vanderbilt
+John Schweitz	1985	1987	G	6-6	210	April 19, 1960	Richmond
+Luis Scola	2008	2017	F	6-9	240	April 30, 1980	
+Fred Scolari	1947	1955	G	5-10	180	March 1, 1922	San Francisco
+Alvin Scott	1978	1985	F-G	6-7	185	September 14, 1955	Oral Roberts
+Brent Scott	1997	1997	F-C	6-10	250	June 15, 1971	Rice University
+Byron Scott	1984	1997	G	6-3	195	March 28, 1961	Arizona State
+Charlie Scott*	1971	1980	G-F	6-5	175	December 15, 1948	UNC
+Dennis Scott	1991	2000	F	6-8	229	September 5, 1968	Georgia Tech
+James Scott	1997	1997	F	6-6	180	June 6, 1972	St. John's
+Mike Scott	2013	2021	F	6-7	237	July 16, 1988	Virginia
+Ray Scott	1962	1972	F-C	6-9	215	July 12, 1938	New York City College of Technology, University of Portland
+Shawnelle Scott	1997	2002	C	6-10	250	June 16, 1972	St. John's
+Tre Scott	2022	2022	F	6-8	225	November 25, 1996	Cincinnati
+Willie Scott	1970	1970	F	6-5	210	May 22, 1947	Alabama State University
+Paul Scranton	1968	1968	F	6-5	230	April 30, 1944	Cal Poly Pomona
+Jay Scrubb	2021	2023	G-F	6-5	220	September 1, 2000	John A. Logan College
+Carey Scurry	1986	1988	F	6-7	188	December 4, 1962	Long Island University
+Dereon Seabron	2023	2024	G	6-7	180	May 26, 2000	NC State
+Bruce Seals	1974	1978	F	6-8	210	June 18, 1953	Xavier University of Louisiana
+Shea Seals	1998	1998	G	6-5	210	August 26, 1975	Tulsa
+Malik Sealy	1993	2000	G	6-8	190	February 1, 1970	St. John's
+Ed Searcy	1976	1976	F	6-6	210	April 17, 1952	St. John's
+Kenny Sears	1956	1964	F	6-9	198	August 17, 1933	Santa Clara
+Wayne See	1950	1950	G	6-3	190	November 3, 1923	Northern Arizona University
+Thabo Sefolosha	2007	2020	G-F	6-6	215	May 2, 1984	
+Rony Seikaly	1989	1999	C	6-11	230	May 10, 1965	Syracuse
+Glen Selbo	1950	1950	G-F	6-3	196	March 29, 1926	Wisconsin
+Josh Selby	2012	2013	G	6-2	183	March 27, 1991	Kansas
+Wayne Selden	2017	2022	G-F	6-5	230	September 30, 1994	Kansas
+Brad Sellers	1987	1993	C-F	7-0	210	December 17, 1962	Wisconsin, Ohio State
+Phil Sellers	1977	1977	F-G	6-4	195	November 20, 1953	Rutgers University
+Rollie Seltz	1950	1950	G-F	5-10	165	January 25, 1924	Hamline University
+Les Selvage	1968	1970	G	6-1	175	March 7, 1943	Truman State University
+Frank Selvy	1955	1964	G-F	6-3	180	November 9, 1932	Furman University
+Jim Seminoff	1947	1950	G-F	6-2	190	September 1, 1922	USC
+Mouhamed Sene	2007	2009	C-F	6-11	230	May 12, 1986	
+George Senesky	1947	1954	G	6-2	179	April 4, 1922	Saint Joseph's
+Alperen Sengun	2022	2024	C-F	6-11	235	July 25, 2002	
+Brice Sensabaugh	2024	2024	F	6-6	235	October 30, 2003	Ohio State
+Kevin Séraphin	2011	2017	F	6-9	285	December 7, 1989	
+Ansu Sesay	2002	2005	F	6-9	225	July 29, 1976	Ole Miss
+Ramon Sessions	2008	2018	G	6-3	190	April 11, 1986	Nevada
+Ha Seung-Jin	2005	2006	C	7-3	305	August 4, 1985	
+Tom Sewell	1985	1985	G	6-5	185	March 11, 1962	Lamar
+Collin Sexton	2019	2024	G	6-3	190	January 4, 1999	Alabama
+Paul Seymour	1948	1960	G-F	6-1	180	January 30, 1928	Toledo
+Nick Shaback	1947	1947	G	5-11	180	September 10, 1918	
+Lynn Shackelford	1970	1970	F	6-5	190	August 27, 1947	UCLA
+Charles Shackleford	1989	1999	F-C	6-10	225	April 22, 1966	NC State
+Carl Shaeffer	1950	1951	F-G	6-3	185	October 25, 1924	Alabama
+Lee Shaffer	1962	1964	F	6-7	220	February 23, 1939	UNC
+Mustafa Shakur	2011	2014	G	6-3	190	August 18, 1984	Arizona
+Landry Shamet	2019	2024	G	6-4	190	March 13, 1997	Wichita State
+God Shammgod	1998	1998	G	6-0	169	April 29, 1976	Providence
+Earl Shannon	1947	1949	G-F	5-11	170	November 23, 1921	Rhode Island
+Howie Shannon	1949	1950	G-F	6-2	175	June 10, 1923	University of North Texas, Kansas State
+Chuck Share	1952	1960	C	6-11	235	March 14, 1927	Bowling Green
+Bill Sharman*	1951	1961	G	6-1	175	May 25, 1926	USC
+Day'Ron Sharpe	2022	2024	C	6-11	265	November 6, 2001	UNC
+Shaedon Sharpe	2023	2024	G	6-6	200	May 30, 2003	Kentucky
+Walter Sharpe	2009	2009	F	6-9	245	July 18, 1986	Mississippi State, UAB
+John Shasky	1989	1991	C	6-11	235	July 31, 1964	Minnesota
+Ron Shavlik	1957	1958	F	6-8	200	December 4, 1933	NC State
+Brian Shaw	1989	2003	G	6-6	190	March 22, 1966	Saint Mary's, UC Santa Barbara
+Casey Shaw	1999	1999	C	6-11	260	July 20, 1975	Toledo
+Marial Shayok	2020	2020	G	6-5	198	July 26, 1995	Virginia, Iowa State
+Bob Shea	1947	1947	F	6-2	194	September 11, 1924	Rhode Island
+Fred Sheffield	1947	1947	F	6-2	165	November 5, 1923	Utah
+Craig Shelton	1981	1982	F	6-7	210	May 1, 1957	Georgetown
+Lonnie Shelton	1977	1986	F-C	6-8	240	October 19, 1955	Oregon State
+Tornike Shengelia	2013	2014	F	6-9	217	October 5, 1991	
+Billy Shepherd	1973	1975	G	5-10	160	November 18, 1949	Butler
+Ben Sheppard	2024	2024	G	6-6	190	July 16, 2001	Belmont
+Jeff Sheppard	1999	1999	G	6-3	190	September 29, 1974	Kentucky
+Steve Sheppard	1978	1979	F	6-6	215	March 21, 1954	Maryland
+Ed Sherod	1983	1983	G	6-2	170	September 13, 1959	VCU
+Charley Shipp	1950	1950	G-F	6-1	200	December 3, 1913	Catholic University of America
+Paul Shirley	2003	2005	F-C	6-10	230	December 23, 1977	Iowa State
+Gene Short	1976	1976	F	6-6	200	August 7, 1953	Jackson State University
+Purvis Short	1979	1990	F-G	6-7	210	July 2, 1957	Jackson State University
+Dexter Shouse	1990	1990	G	6-2	200	March 24, 1963	University of South Alabama
+Dick Shrider	1949	1949	G	6-2	190	February 7, 1923	Ohio University
+Gene Shue	1955	1964	G	6-2	170	December 18, 1931	Maryland
+John Shumate	1976	1981	F-C	6-9	235	April 6, 1952	Notre Dame
+Iman Shumpert	2012	2021	G	6-5	215	June 26, 1990	Georgia Tech
+Alexey Shved	2013	2015	G	6-6	190	December 16, 1988	
+Pascal Siakam	2017	2024	F-C	6-8	230	April 2, 1994	New Mexico State
+Jordan Sibert	2019	2019	G	6-4	187	August 1, 1992	Ohio State, Dayton
+Sam Sibert	1973	1973	F	6-7	215	February 11, 1949	Kentucky State University
+Mark Sibley	1974	1974	G	6-2	175	November 13, 1950	Northwestern
+Jerry Sichting	1981	1990	G	6-1	168	November 29, 1956	Purdue
+Don Sidle	1969	1972	F-C	6-8	215	June 21, 1946	Oklahoma
+Larry Siegfried	1964	1972	F	6-3	190	May 22, 1939	Ohio State
+Ralph Siewert	1947	1947	C	7-1	230	December 31, 1923	Dakota Wesleyan University
+Jack Sikma*	1978	1991	C-F	6-11	230	November 14, 1955	Illinois Wesleyan University
+James Silas	1973	1982	G	6-1	180	February 11, 1949	Stephen F. Austin
+Paul Silas	1965	1980	F-C	6-7	220	July 12, 1943	Creighton
+Xavier Silas	2012	2018	G	6-5	205	January 22, 1988	Colorado, Northern Illinois
+Garret Siler	2011	2011	C	6-11	305	October 25, 1986	Augusta State University
+Mike Silliman	1971	1971	F	6-6	225	May 5, 1944	United States Military Academy
+Chris Silva	2020	2023	F	6-8	234	September 19, 1996	South Carolina
+Wayne Simien	2006	2007	F	6-9	255	March 9, 1983	Kansas
+Ben Simmons	2018	2024	G-F	6-10	240	July 20, 1996	LSU
+Bobby Simmons	2002	2012	G-F	6-7	210	June 2, 1980	DePaul
+Cedric Simmons	2007	2009	F	6-9	235	January 3, 1986	NC State
+Connie Simmons	1947	1956	C-F	6-8	222	March 15, 1925	
+Grant Simmons	1968	1969	G	6-3	190	March 7, 1943	Nebraska
+Johnny Simmons	1947	1947	G	6-1	184	July 7, 1924	NYU
+Jonathon Simmons	2016	2019	G-F	6-6	195	September 14, 1989	Houston
+Kobi Simmons	2018	2024	G	6-5	166	July 4, 1997	Arizona
+Lionel Simmons	1991	1997	F-G	6-7	210	November 14, 1968	La Salle
+Miles Simon	1999	1999	G	6-3	202	November 21, 1975	Arizona
+Walt Simon	1968	1974	F-G	6-6	200	December 1, 1939	Benedict College
+Marko Simonovic	2022	2023	C	6-11	216	October 15, 1999	
+Anfernee Simons	2019	2024	G	6-3	181	June 8, 1999	
+Dickey Simpkins	1995	2002	F	6-9	248	April 6, 1972	Providence
+Ralph Simpson	1971	1980	G-F	6-5	200	August 10, 1949	Michigan State
+Zavier Simpson	2022	2024	G	6-0	190	February 11, 1997	Michigan
+Alvin Sims	1999	1999	G	6-4	235	October 18, 1974	Louisville
+Bob Sims	1962	1968	G-F	6-5	220	October 9, 1938	Pepperdine
+Courtney Sims	2008	2009	C	6-10	245	October 21, 1983	Michigan
+Doug Sims	1969	1969	F	6-7	195	June 29, 1943	Kent State University
+Henry Sims	2013	2016	C	6-10	248	March 27, 1990	Georgetown
+Jericho Sims	2022	2024	F	6-10	245	October 20, 1998	Texas
+Scott Sims	1978	1978	G	6-1	170	April 18, 1955	Missouri
+Kyle Singler	2013	2018	F	6-8	228	May 4, 1988	Duke
+Sean Singletary	2009	2009	G	6-0	185	September 6, 1985	Virginia
+Chris Singleton	2012	2014	F	6-8	230	November 21, 1989	Florida State
+James Singleton	2006	2012	F	6-8	216	July 20, 1981	Murray State
+McKinley Singleton	1987	1987	G	6-5	175	October 29, 1961	UAB
+Zeke Sinicola	1952	1954	G	5-10	165	January 25, 1929	Niagara University
+Deividas Sirvydis	2021	2022	G-F	6-8	190	June 10, 2000	
+Charlie Sitton	1985	1985	F	6-8	210	July 3, 1962	Oregon State
+Peyton Siva	2014	2014	G	6-0	185	October 24, 1990	Louisville
+Dmytro Skapintsev	2024	2024	C	7-1	260	May 12, 1998	Cal State Northridge
+Scott Skiles	1987	1996	G	6-1	180	March 5, 1964	Michigan State
+Al Skinner	1975	1980	G	6-3	190	June 16, 1952	UMass
+Brian Skinner	1999	2012	F	6-9	255	May 19, 1976	Baylor
+Tal Skinner	1975	1976	F-G	6-5	195	September 10, 1952	University of Maryland Eastern Shore
+Whitey Skoog	1952	1957	G	5-11	180	November 2, 1926	Minnesota
+Jeff Slade	1963	1963	F	6-6	220	March 1, 1941	Kenyon College
+Reggie Slater	1995	2003	F	6-7	215	August 27, 1970	Wyoming
+Jim Slaughter	1952	1952	C	6-11	210	May 13, 1928	South Carolina
+Jose Slaughter	1983	1983	G	6-5	205	September 9, 1960	University of Portland
+Jalen Slawson	2024	2024	F	6-7	215	October 22, 1999	Furman University
+Tamar Slay	2003	2005	G	6-8	215	April 2, 1980	Marshall
+Donald Sloan	2012	2016	G	6-3	205	January 15, 1988	Texas A&M
+Jerry Sloan*	1966	1976	G-F	6-5	195	March 28, 1942	University of Evansville
+Uroš Slokar	2007	2007	F	6-10	238	May 14, 1983	
+Tom Sluby	1985	1985	G	6-4	200	February 18, 1962	Notre Dame
+Alen Smailagić	2020	2021	F	6-10	215	August 18, 2000	
+Javonte Smart	2022	2024	G	6-4	205	June 3, 1999	LSU
+Keith Smart	1989	1989	G	6-1	175	September 21, 1964	Indiana
+Marcus Smart	2015	2024	G	6-3	220	March 6, 1994	Oklahoma State
+Belus Smawley	1947	1952	G-F	6-1	195	March 20, 1918	Appalachian State University
+Jack Smiley	1949	1950	F-G	6-3	190	December 22, 1922	Illinois
+Adrian Smith	1962	1972	G	6-1	180	October 5, 1936	Northeast Mississippi Community College, Kentucky
+Al Smith	1972	1976	G	6-1	185	January 15, 1947	Bradley
+Bill Smith	1962	1962	G-F	6-5	190	April 26, 1939	Saint Peter's College
+Bingo Smith	1970	1980	F-G	6-5	195	February 26, 1946	Tulsa
+Bobby Smith	1960	1962	G	6-4	190	August 20, 1937	West Virginia
+Charles Smith	1989	1997	F-C	6-10	230	July 16, 1965	Pitt
+Charles Smith	1990	1996	G	6-1	160	November 29, 1967	Georgetown
+Charles Smith	1998	2006	G	6-4	194	August 22, 1975	New Mexico
+Chris Smith	1993	1995	G	6-3	190	May 17, 1970	UConn
+Chris Smith	2014	2014	G	6-2	200	October 13, 1987	Manhattan College, Louisville
+Clinton Smith	1987	1991	F	6-6	210	January 19, 1964	Ohio State, Cleveland State University
+Craig Smith	2007	2012	F	6-7	250	November 10, 1983	Boston College
+Deb Smith	1947	1947	F	6-3	180	January 7, 1920	Utah
+Dennis Smith Jr.	2018	2024	G	6-2	205	November 25, 1997	NC State
+Derek Smith	1983	1991	G-F	6-6	205	November 1, 1961	Louisville
+Don Smith	1949	1949	G-F	6-2	190	July 27, 1920	Minnesota
+Don Smith	1975	1975	G	6-0	160	October 10, 1951	Dayton
+Donta Smith	2005	2006	G-F	6-7	215	November 27, 1983	Southeastern Illinois College
+Doug Smith	1992	1996	F	6-10	220	September 17, 1969	Missouri
+Dru Smith	2023	2024	G	6-3	203	December 30, 1997	University of Evansville, Missouri
+Ed Smith	1954	1954	F	6-6	180	July 5, 1929	Harvard University
+Elmore Smith	1972	1979	C	7-0	250	May 9, 1949	Kentucky State University
+Garfield Smith	1971	1973	C-F	6-9	235	November 18, 1945	Eastern Kentucky University
+Greg Smith	1969	1976	F	6-5	195	January 28, 1947	Western Kentucky
+Greg Smith	2012	2016	C	6-10	250	January 8, 1991	Fresno State
+Ish Smith	2011	2024	G	6-0	175	July 5, 1988	Wake Forest
+J.R. Smith	2005	2020	G-F	6-6	225	September 9, 1985	
+Jabari Smith	2001	2005	C	6-11	250	February 12, 1977	LSU
+Jabari Smith Jr.	2023	2024	F	6-11	220	May 13, 2003	Auburn
+Jalen Smith	2021	2024	F	6-10	215	March 16, 2000	Maryland
+Jason Smith	2008	2019	F-C	7-0	240	March 2, 1986	Colorado State
+Jerry Smith	2012	2012	G	6-2	190	September 26, 1987	Louisville
+Jim Smith	1982	1983	F	6-9	225	April 12, 1958	Ohio State
+Joe Smith	1996	2011	F	6-10	225	July 26, 1975	Maryland
+John Smith	1969	1970	C	7-0	235	May 24, 1944	University of Southern Colorado
+Josh Smith	2005	2018	F	6-9	225	December 5, 1985	
+Keith Smith	1987	1987	G	6-3	180	March 9, 1964	Loyola Marymount
+Ken Smith	1976	1976	F	6-7	185	July 12, 1953	Lon Morris College, Tulsa
+Kenny Smith	1988	1997	G	6-3	170	March 8, 1965	UNC
+LaBradford Smith	1992	1994	G	6-3	200	April 3, 1969	Louisville
+Larry Smith	1981	1993	F-C	6-8	215	January 18, 1958	Alcorn State
+Leon Smith	2002	2004	C	6-10	235	November 2, 1980	
+Michael Smith	1990	1995	F	6-10	225	May 19, 1965	BYU
+Michael Smith	1995	2001	F	6-8	230	March 28, 1972	Providence
+Mike Smith	2001	2001	F	6-8	195	April 15, 1976	Louisiana-Monroe
+Nick Smith Jr.	2024	2024	G	6-5	185	April 18, 2004	Arkansas
+Nolan Smith	2012	2013	G	6-2	185	July 25, 1988	Duke
+Otis Smith	1987	1992	G-F	6-5	210	January 30, 1964	Jacksonville University
+Pete Smith	1973	1973	F	6-6	205		Valdosta State University
+Phil Smith	1975	1983	G	6-4	185	April 22, 1952	San Francisco
+Randy Smith	1972	1983	G-F	6-3	180	December 12, 1948	Buffalo State
+Reggie Smith	1993	1994	C	6-10	240	August 21, 1970	TCU
+Robert Smith	1978	1985	G	5-11	165	March 10, 1955	UNLV
+Russ Smith	2015	2016	G	6-0	165	April 19, 1991	Louisville
+Sam Smith	1968	1971	F	6-7	230	January 27, 1944	Louisville, Kentucky Wesleyan College
+Sam Smith	1979	1980	G	6-4	200	January 8, 1955	UNLV
+Steve Smith	1992	2005	G	6-8	200	March 31, 1969	Michigan State
+Steven Smith	2007	2007	F	6-8	235	April 12, 1983	La Salle
+Stevin Smith	1997	1997	G	6-2	208	January 24, 1972	Arizona State
+Terquavion Smith	2024	2024	G	6-4	165	December 31, 2002	NC State
+Theron Smith	2004	2005	F	6-8	225	October 3, 1980	Ball State University
+Tony Smith	1991	2001	G	6-3	185	June 14, 1968	Marquette
+William Smith	1972	1973	C	7-0	220	February 14, 1949	Syracuse
+Willie Smith	1977	1980	G	6-2	170	October 26, 1953	Missouri
+Zhaire Smith	2019	2020	G	6-3	205	June 4, 1999	Texas Tech
+Rik Smits	1989	2000	C	7-4	250	August 23, 1966	Marist College
+Mike Smrek	1986	1992	C	7-0	250	August 31, 1962	Canisius
+Joe Smyth	1954	1954	F	6-3	215	May 22, 1929	Niagara University
+Xavier Sneed	2022	2023	F	6-5	215	December 21, 1997	Kansas State
+Tony Snell	2014	2022	G-F	6-6	213	November 10, 1991	New Mexico
+Eric Snow	1996	2008	G	6-3	190	April 24, 1973	Michigan State
+Dick Snyder	1967	1979	G-F	6-5	207	February 1, 1944	Davidson
+Kirk Snyder	2005	2008	G	6-6	225	June 5, 1983	Nevada
+Chips Sobek	1950	1950	G-F	6-0	180	February 10, 1920	Notre Dame
+Ricky Sobers	1976	1986	G	6-3	198	January 15, 1953	UNLV
+Ron Sobie	1957	1960	G	6-3	185	September 21, 1934	DePaul
+Jeremy Sochan	2023	2024	F-G	6-8	230	May 20, 2003	Baylor
+Mike Sojourner	1975	1977	C-F	6-9	225	October 16, 1953	Utah
+Willie Sojourner	1972	1975	C-F	6-8	225	September 10, 1948	Weber State
+Will Solomon	2002	2009	G	6-1	185	July 20, 1978	Clemson
+Willie Somerset	1966	1969	G	5-8	170	March 17, 1942	Duquesne
+Darius Songaila	2004	2011	F	6-9	248	February 14, 1978	Wake Forest
+Dave Sorenson	1971	1973	F	6-8	225	July 8, 1948	Ohio State
+James Southerland	2014	2014	F	6-8	215	April 28, 1990	Syracuse
+Gino Sovran	1947	1947	F-G	6-2	175	December 17, 1924	Detroit Mercy
+Pape Sow	2005	2007	F	6-10	250	November 22, 1981	Cal State Fullerton
+Ken Spain	1971	1971	C	6-9	225	October 6, 1946	Houston
+Ray Spalding	2019	2021	F	6-10	215	March 11, 1997	Louisville
+Jim Spanarkel	1980	1984	G-F	6-5	190	June 28, 1957	Duke
+Vassilis Spanoulis	2007	2007	G	6-4	195	August 7, 1982	
+Dan Sparks	1969	1970	F	6-8	200	April 17, 1945	Vincennes University, Weber State
+Guy Sparrow	1958	1960	F	6-6	218	November 2, 1932	Detroit Mercy
+Rory Sparrow	1981	1992	G	6-2	175	June 12, 1958	Villanova
+Odie Spears	1949	1957	G	6-5	205	June 17, 1924	Western Kentucky
+Art Spector	1947	1950	F	6-4	200	October 17, 1918	Villanova
+Marreese Speights	2009	2018	C-F	6-10	255	August 4, 1987	Florida
+Omari Spellman	2019	2020	F	6-8	245	July 21, 1997	Villanova
+Andre Spencer	1993	1994	F	6-6	210	July 20, 1964	Northern Arizona University
+Elmore Spencer	1993	1997	C	7-0	270	December 6, 1969	Georgia, UNLV
+Felton Spencer	1991	2002	C	7-0	265	January 15, 1968	Louisville
+Pat Spencer	2024	2024	G	6-3	205	July 4, 1996	Loyola (MD), Northwestern
+Lou Spicer	1947	1947	F	6-2	195	November 12, 1922	Syracuse
+Craig Spitzer	1968	1968	C	7-0	225	December 18, 1945	Tulane
+Tiago Splitter	2011	2017	F-C	6-11	245	January 1, 1985	
+Art Spoelstra	1955	1958	C	6-9	220	September 11, 1932	Western Kentucky
+Bruce Spraggins	1968	1968	F	6-5	188	August 31, 1939	Virginia Union University
+Latrell Sprewell	1993	2005	G	6-5	190	September 8, 1970	Alabama
+Larry Spriggs	1982	1986	F	6-7	230	September 8, 1959	Howard University
+Jaden Springer	2022	2024	G	6-4	204	September 25, 2002	Tennessee
+Jim Springer	1949	1949	C	6-9	235	June 17, 1926	
+Jim Spruill	1949	1949	G	6-2	225	February 26, 1923	Rice University
+Ryan Stack	1999	2000	F	6-11	215	July 24, 1975	South Carolina
+Jerry Stackhouse	1996	2013	G-F	6-6	218	November 5, 1974	UNC
+Kevin Stacom	1975	1982	G	6-3	185	September 4, 1951	Holy Cross, Providence
+Erv Staggs	1970	1970	F-G	6-6	195	September 1, 1948	North Carolina A&T, Cheyney (PA)
+Bud Stallworth	1973	1977	F-G	6-5	190	January 18, 1950	Kansas
+Dave Stallworth	1966	1975	F-C	6-7	200	December 20, 1941	Wichita State
+Ed Stanczak	1950	1951	F	6-1	185	August 15, 1921	
+Cassius Stanley	2021	2022	G	6-5	190	August 18, 1999	Duke
+Terence Stansbury	1985	1987	G	6-5	170	February 27, 1961	Temple
+John Starks	1989	2002	G	6-5	180	August 10, 1965	Oklahoma State
+Keith Starr	1977	1977	G-F	6-6	190	March 14, 1954	Pitt
+Nik Stauskas	2015	2022	G	6-6	205	October 7, 1993	Michigan
+Larry Staverman	1959	1964	F	6-7	205	October 11, 1936	Thomas More College
+Larry Steele	1972	1980	G-F	6-5	180	May 5, 1949	Kentucky
+Matt Steigenga	1997	1997	F	6-7	225	March 27, 1970	Michigan State
+Vladimir Stepania	1999	2004	C	7-0	236	May 8, 1976	
+D.J. Stephens	2014	2019	G-F	6-5	188	December 19, 1990	Memphis
+Everette Stephens	1989	1991	G	6-2	175	October 21, 1966	Purdue
+Jack Stephens	1956	1956	G-F	6-3	185	May 18, 1933	Notre Dame
+Joe Stephens	1997	2000	F	6-7	210	January 28, 1973	Colorado, Little Rock
+Lance Stephenson	2011	2022	G-F	6-6	230	September 5, 1990	Cincinnati
+Alex Stepheson	2016	2016	F	6-10	270	August 7, 1987	UNC, USC
+Brook Steppe	1983	1989	G-F	6-5	195	November 7, 1959	Georgia Tech
+Barry Stevens	1993	1993	G-F	6-5	195	January 17, 1963	Iowa State
+Lamar Stevens	2021	2024	F	6-6	230	July 9, 1997	Penn State
+Wayne Stevens	1960	1960	F	6-3	185	June 19, 1936	Cincinnati
+DeShawn Stevenson	2001	2013	G	6-5	210	April 3, 1981	
+Dennis Stewart	1971	1971	F	6-6	220	April 11, 1947	Michigan
+Isaiah Stewart	2021	2024	F-C	6-8	250	May 22, 2001	Washington
+Kebu Stewart	1998	1998	F	6-8	239	December 19, 1973	UNLV, Cal State-Bakersfield
+Larry Stewart	1992	1997	F	6-8	220	September 21, 1968	Coppin State University
+Michael Stewart	1998	2005	C	6-10	230	April 25, 1975	California
+Norm Stewart	1957	1957	F	6-5	205	January 20, 1935	Missouri
+Greg Stiemsma	2012	2015	C	6-11	260	September 26, 1985	Wisconsin
+Steve Stipanovich	1984	1988	C	6-11	245	November 17, 1960	Missouri
+Bryant Stith	1993	2002	G	6-5	208	December 10, 1970	Virginia
+Sam Stith	1962	1962	G	6-2	185	July 22, 1937	St. Bonaventure
+Tom Stith	1963	1963	F	6-5	210	January 21, 1939	St. Bonaventure
+Alex Stivrins	1986	1993	F	6-8	220	November 29, 1962	Creighton, Colorado
+David Stockton	2015	2018	G	5-11	165	June 24, 1991	Gonzaga
+John Stockton*	1985	2003	G	6-1	170	March 26, 1962	Gonzaga
+Peja Stojaković	1999	2011	F	6-10	229	June 9, 1977	
+Ed Stokes	1998	1998	C	7-0	264	September 3, 1971	Arizona
+Greg Stokes	1986	1990	F-C	6-10	220	August 5, 1963	Iowa
+Jarnell Stokes	2015	2017	F-C	6-9	263	January 7, 1994	Tennessee
+Maurice Stokes*	1956	1958	F-C	6-7	232	June 17, 1933	Saint Francis University
+Art Stolkey	1947	1947	G	6-1	180	October 23, 1920	Detroit Mercy
+Randy Stoll	1968	1968	C	6-7	235		Washington State
+Diamond Stone	2017	2017	C	6-11	255	February 10, 1997	Maryland
+George Stone	1969	1972	F	6-7	195	February 9, 1946	Marshall
+Julyan Stone	2012	2018	G	6-6	200	December 7, 1988	Texas-El Paso
+Awvee Storey	2005	2008	G-F	6-6	222	April 18, 1977	Illinois, Arizona State
+Damon Stoudamire	1996	2008	G	5-10	171	September 3, 1973	Arizona
+Salim Stoudamire	2006	2008	G	6-1	179	October 11, 1982	Arizona
+Amar'e Stoudemire	2003	2016	F-C	6-10	245	November 16, 1982	
+Paul Stovall	1973	1974	F	6-4	215	August 16, 1948	Pratt Community College, Arizona State
+D.J. Strawberry	2008	2008	G	6-5	201	June 15, 1985	Maryland
+Joe Strawder	1966	1968	C	6-10	235	September 21, 1940	Bradley
+Julian Strawther	2024	2024	F	6-7	205	April 18, 2002	Gonzaga
+Bill Stricker	1971	1971	F	6-9	210	January 22, 1948	University of the Pacific
+Erick Strickland	1997	2005	G	6-3	210	November 25, 1973	Nebraska
+Mark Strickland	1995	2003	F	6-9	210	July 14, 1970	Temple
+Rod Strickland	1989	2005	G	6-3	175	July 11, 1966	DePaul
+Roger Strickland	1964	1964	F	6-5	200	September 4, 1940	Jacksonville University
+John Stroeder	1988	1989	F	6-10	260	July 24, 1958	Montana
+Derek Strong	1992	2001	F	6-8	220	February 9, 1968	Xavier
+Lamont Strothers	1992	1993	G	6-4	190	May 10, 1968	Christopher Newport University
+John Stroud	1981	1981	F	6-7	215	October 29, 1957	Ole Miss
+Red Stroud	1968	1968	G	6-0	160	May 2, 1941	Mississippi State
+Max Strus	2020	2024	G	6-5	215	March 28, 1996	Lewis (IL), DePaul
+Rodney Stuckey	2008	2017	G	6-5	210	April 21, 1986	Eastern Washington
+Gene Stump	1948	1950	F-G	6-2	185	August 9, 1925	DePaul
+Stan Stutz	1947	1949	G-F	5-10	170	April 14, 1920	Rhode Island
+Jalen Suggs	2022	2024	G	6-5	205	June 3, 2001	Gonzaga
+Gary Suiter	1971	1971	C-F	6-9	225	January 18, 1945	Midwestern State University
+Jared Sullinger	2013	2017	F	6-9	260	March 4, 1992	Ohio State
+DaJuan Summers	2010	2013	F	6-8	230	January 24, 1988	Georgetown
+Edmond Sumner	2018	2023	G	6-4	196	December 31, 1995	Xavier
+Barry Sumpter	1989	1989	F-C	6-11	215	November 11, 1965	Louisville, Austin Peay State University
+Don Sunderlage	1954	1955	G	6-1	180	December 20, 1929	Illinois
+Bruno Šundov	1999	2005	C	7-2	220	February 10, 1980	
+Jon Sundvold	1984	1992	G	6-2	170	July 2, 1961	Missouri
+Bob Sura	1996	2005	G	6-5	200	March 25, 1973	Florida State
+Dick Surhoff	1953	1954	F	6-4	210	November 16, 1929	Long Island University
+George Sutor	1968	1970	C	6-8	235	September 14, 1943	La Salle
+Dane Suttle	1984	1985	G	6-3	190	August 9, 1961	Pepperdine
+Greg Sutton	1992	1996	G	6-2	170	December 3, 1967	Oral Roberts
+Keith Swagerty	1969	1970	F	6-7	235	October 30, 1945	University of the Pacific
+Bennie Swain	1959	1959	F	6-8	220	December 16, 1933	Texas Southern
+Caleb Swanigan	2018	2020	F	6-9	260	April 18, 1997	Purdue
+Norm Swanson	1954	1954	F	6-6	210	October 4, 1930	Detroit Mercy
+Dan Swartz	1963	1963	F	6-4	215	December 23, 1934	Morehead State University
+Mike Sweetney	2004	2007	F	6-8	275	October 25, 1982	Georgetown
+Cole Swider	2023	2024	F	6-9	220	May 8, 1999	Villanova, Syracuse
+Robert Swift	2005	2009	C	7-0	245	December 3, 1985	
+Skeeter Swift	1970	1974	G	6-3	204	June 19, 1946	East Tennessee State University
+Stromile Swift	2001	2009	F	6-9	225	November 21, 1979	LSU
+Aaron Swinson	1995	1995	F	6-5	230	January 9, 1971	Auburn
+Craig Sword	2022	2022	G	6-3	196	January 16, 1994	Mississippi State
+Pape Sy	2011	2011	F	6-7	225	April 5, 1988	
+Buck Sydnor	1947	1947	G	5-10	175	September 19, 1921	Western Kentucky
+Keifer Sykes	2022	2022	G	6-0	180	December 30, 1993	Green Bay
+Larry Sykes	1996	1996	F	6-9	255	April 11, 1973	Xavier
+Brett Szabo	1997	1997	C	6-11	230	February 1, 1968	Augustana College (SD)
+Wally Szczerbiak	2000	2009	F	6-7	244	March 5, 1977	Miami University
+Walt Szczerbiak	1972	1972	F	6-6	210	August 21, 1949	George Washington

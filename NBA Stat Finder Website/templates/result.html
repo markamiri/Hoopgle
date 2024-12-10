@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.0"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>Result Page</title>
+    <style>
+      /* Same root variables for light/dark modes */
+      :root {
+        --background-color: #ffffff;
+        --text-color: #000000;
+        --input-bg-color: #f1f1f1;
+        --header-bg-color: #f8f8f8;
+        --button-bg-color: grey;
+        --button-text-color: white;
+        --button-active-bg-color: orange;
+        --table-header-bg-color: #f2f2f2;
+      }
+
+      body.dark-mode {
+        --background-color: #121212;
+        --text-color: #ffffff;
+        --input-bg-color: #333333;
+        --header-bg-color: #242424;
+        --button-bg-color: #444444;
+        --button-text-color: #ffffff;
+        --button-active-bg-color: #ff5722;
+        --table-header-bg-color: #333333;
+      }
+
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 30px; /* Adjusted vertical padding */
+        align-items: center;
+        box-sizing: border-box;
+        background-color: var(--header-bg-color);
+        height: 80px; /* Slightly increased the height */
+      }
+
+      .header__left {
+        display: flex;
+        align-items: flex-end; /* Align bottom to balance spacing */
+      }
+
+      .header__right {
+        margin-left: auto;
+      }
+
+      .hoopgle {
+        font-family: "Nabla", sans-serif;
+        font-size: 4rem;
+        color: var(--text-color);
+        margin-right: 20px;
+        padding-top: 10px; /* Added padding to give it space from the top */
+        text-decoration: none; /* Ensure no underline */
+      }
+
+      .game-logs-table {
+        width: 90%;
+        max-width: 1000px;
+        margin: 0px auto;
+        border-collapse: collapse;
+        font-size: 20px;
+        transform: scale(0.7);
+        transform-origin: top;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .game-logs-table th,
+      .game-logs-table td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+        text-align: left;
+        color: var(--text-color);
+      }
+
+      .game-logs-table th {
+        background-color: var(--table-header-bg-color);
+      }
+
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+
+      input:checked + .slider {
+        background-color: var(--button-active-bg-color);
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+
+      .tab {
+        overflow: hidden;
+        border-bottom: 1px solid #ccc;
+      }
+      .tab button {
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+      }
+      .tab button:hover {
+        background-color: #ddd;
+      }
+      .tab button.active {
+        background-color: #ccc;
+      }
+      .tabcontent {
+        display: none;
+        padding: 30px 12px;
+        border-top: none;
+      }
+      .tabcontent.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body id="body">
+    <!-- Header starts -->
+    <div class="header">
+      <div class="header__left">
+        <a href="/" class="hoopgle">hoopgle</a>
+      </div>
+      <div class="header__right">
+        <a href="#">Contact Us</a>
+        <!-- Dark Mode Toggle Switch -->
+        <label class="toggle-switch">
+          <input type="checkbox" id="themeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    <!-- Header ends -->
+
+    <!-- Main body starts -->
+    <div class="main_body">
+      <h1 style="margin-top: 20px; margin-bottom: 10px">{{ path }} ?</h1>
+      <p>
+        <!--
+        Format Percentage:
+        <span id="format-percentage">{{ format_percentage |safe }}</span>
+        -->
+      </p>
+
+      <p id="result-message" style="margin-bottom: 30px">result_message</p>
+      <!-- Assign an ID to the result message -->
+
+      <!-- Add a canvas for the chart -->
+      <div class="chart-container" style="width: 1200px; height: 600px">
+        <canvas
+          id="pointsChart"
+          style="min-width: 1200px; height: 300px"
+        ></canvas>
+      </div>
+      <div class="tab">
+        <!-- Playoff -->
+
+        {% if end_index %}
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'TotalGameLogs', '{{ result_message|safe }}', '{{ format_percentage|safe }}')"
+        >
+          Career Playoff Games
+        </button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'FirstGameLog', '{{last5_result}}', '{{ format_percentage1|safe}}')"
+        >
+          Latest playoff Series
+        </button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'SecondGameLog', '{{last10_result}}' , '{{ format_percentage2|safe}}')"
+        >
+          Second Latest playoff Series
+        </button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'ThirdGameLog', '{{last15_result}}', '{{ format_percentage3|safe }}')"
+        >
+          Third Latest playoff Series
+        </button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'FourthGameLog', '{{last20_result}}', '{{ format_percentage4|safe }}')"
+        >
+          Fourth Latest playoff Series
+        </button>
+        {% else %}
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'RegularGameLogs', '{{result_message}}')"
+        >
+          {{year}} Regular Season Game Logs
+        </button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'Last5', '{{ last5_result }}')"
+        >
+          Last 5 Games
+        </button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'Last10', '{{ last10_result }}')"
+        >
+          Last 10 Games
+        </button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'Last15',  '{{ last15_result }}')"
+        >
+          Last 15 Games
+        </button>
+        <button
+          class="tablinks"
+          onclick="openTab(event, 'Last20', '{{ last20_result }}')"
+        >
+          Last 20 Games
+        </button>
+        {% endif %}
+      </div>
+
+      <!-- Conditionally render the tab content based on the existence of first_game_log -->
+      {% if end_index %}
+      <div id="TotalGameLogs" class="tabcontent">{{ game_logs_html|safe }}</div>
+      <div id="FirstGameLog" class="tabcontent">{{ last5_df|safe }}</div>
+      <div id="SecondGameLog" class="tabcontent">{{ last10_df|safe }}</div>
+      <div id="ThirdGameLog" class="tabcontent">{{ last15_df|safe }}</div>
+      <div id="FourthGameLog" class="tabcontent">{{ last20_df|safe }}</div>
+      {% else %}
+      <div id="RegularGameLogs" class="tabcontent">
+        {{ game_logs_html|safe }}
+      </div>
+      <div id="Last5" class="tabcontent">{{ last5_df|safe }}</div>
+      <div id="Last10" class="tabcontent">{{ last10_df|safe }}</div>
+      <div id="Last15" class="tabcontent">{{ last15_df|safe }}</div>
+      <div id="Last20" class="tabcontent">{{ last20_df|safe }}</div>
+      {% endif %}
+
+      <script>
+        function openTab(evt, tabName, resultMessage, formatPercentage) {
+          var i, tabcontent, tablinks;
+
+          // Hide all tabcontent
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+
+          // Remove "active" class from all tablinks
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(
+              " active",
+              ""
+            );
+          }
+
+          // Show the current tab, add "active" class to the button that opened the tab
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+
+          // Update the result message and format percentage
+          document.getElementById("result-message").innerText = resultMessage;
+
+          // Update the Format Percentage
+          document.getElementById("format-percentage").innerText =
+            formatPercentage;
+        }
+
+        // Optionally set the first tab to open by default on page load
+        document.addEventListener("DOMContentLoaded", function () {
+          document.getElementsByClassName("tablinks")[0].click();
+        });
+      </script>
+    </div>
+    <!-- Main body ends -->
+
+    <script>
+      // Dark Mode Toggle
+      const toggleSwitch = document.getElementById("themeToggle");
+      const body = document.getElementById("body");
+
+      // Check saved theme preference on load
+      document.addEventListener("DOMContentLoaded", () => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark-mode") {
+          body.classList.add("dark-mode");
+          toggleSwitch.checked = true;
+        }
+      });
+
+      // Toggle dark mode on switch change
+      toggleSwitch.addEventListener("change", () => {
+        body.classList.toggle("dark-mode");
+
+        // Save the preference in localStorage
+        if (body.classList.contains("dark-mode")) {
+          localStorage.setItem("theme", "dark-mode");
+        } else {
+          localStorage.setItem("theme", "light-mode");
+        }
+      });
+      var games = {{ games | default([]) | tojson }};
+      var points = {{ points | default([]) | tojson }};
+      var propt_num = {{ propt_num | default(0) | tojson }}; // Default to 0 if not provided
+      var cat = {{ cat | default(0) | tojson }};
+      // Create the chart
+      var ctx = document.getElementById('pointsChart').getContext('2d');
+      var pointsChart = new Chart(ctx, {
+          type: 'line',
+          data: {
+              labels: games, // X-axis labels (Games)
+              datasets: [{
+                  label: cat,
+                  data: points, // Y-axis data (Points)
+                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                  borderColor: 'rgba(255, 99, 132, 1)',
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              maintainAspectRatio: false,
+
+              scales: {
+                  y: {
+                      beginAtZero: true, // Start y-axis from 0
+                      grid: {
+                          color: 'rgba(36, 36, 36, 0.2)', // Light color for grid lines
+                          lineWidth: 3, // Set grid line width for better visibility
+                      }
+                  },
+                  x: {
+                      grid: {
+                          color: 'rgba(36, 36, 36, 0.2)', // Light color for grid lines
+                          lineWidth: 3 // Set grid line width for better visibility
+                      }
+                  }
+              },
+              plugins: {
+                  annotation: {
+                      annotations: {
+                          horizontalLine: {
+                              type: 'line',
+                              yMin: propt_num,
+                              yMax: propt_num,
+                              borderColor: 'rgba(58, 58, 58)', // Color of the horizontal line
+                              borderWidth: 2
+                          }
+                      }
+                  }
+              }
+          }
+      });
+    </script>
+  </body>
+</html>

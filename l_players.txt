@@ -1,0 +1,208 @@
+Player	From	To	Pos	Ht	Wt	Birth Date	Colleges
+Fred LaCour	1961	1963	G-F	6-5	210.0	February 7, 1938	San Francisco
+Raef LaFrentz	1999	2008	F-C	6-11	240.0	May 29, 1976	Kansas
+Tom LaGarde	1978	1985	C-F	6-10	220.0	February 10, 1955	UNC
+Jake LaRavia	2023	2024	F	6-8	235.0	November 3, 2001	Indiana State University, Wake Forest
+Rusty LaRue	1998	2004	G	6-2	210.0	December 10, 1973	Wake Forest
+Rudy LaRusso	1960	1969	F-C	6-7	220.0	November 11, 1937	Dartmouth College
+Zach LaVine	2015	2024	G-F	6-5	200.0	March 10, 1995	UCLA
+Skal Labissière	2017	2020	F	6-10	235.0	March 18, 1996	Kentucky
+Reggie Lacefield	1969	1969	G-F	6-5	230.0	April 10, 1945	Western Michigan
+Edgar Lacey	1969	1969	F	6-6	190.0	August 2, 1944	UCLA
+Sam Lacey	1971	1983	C	6-10	235.0	March 28, 1948	New Mexico State
+Bob Lackey	1973	1974	G-F	6-5	200.0	April 4, 1949	, Marquette
+Wendell Ladner	1971	1975	F	6-5	220.0	October 6, 1948	Southern Miss
+Christian Laettner	1993	2005	F-C	6-11	235.0	August 17, 1969	Duke
+Oliver Lafayette	2010	2010	G	6-2	190.0	May 6, 1984	Houston
+Bill Laimbeer	1981	1994	C	6-11	245.0	May 19, 1957	Notre Dame
+Pete Lalich	1947	1947	F	6-2	190.0	June 23, 1920	Ohio University
+Bo Lamar	1974	1977	G	6-1	180.0	April 7, 1951	Louisiana
+Anthony Lamb	2021	2023	F	6-6	227.0	January 20, 1998	University of Vermont
+Doron Lamb	2013	2014	G	6-4	210.0	November 6, 1991	Kentucky
+Jeremy Lamb	2013	2022	G-F	6-5	180.0	May 30, 1992	UConn
+John Lambert	1976	1982	C-F	6-10	225.0	January 14, 1953	USC
+Jeff Lamp	1982	1989	F-G	6-6	195.0	March 9, 1959	Virginia
+Maciej Lampe	2004	2006	C	6-11	275.0	February 5, 1985	
+Jim Lampley	1987	1987	C	6-10	230.0	July 2, 1960	Vanderbilt, Little Rock
+Sean Lampley	2003	2004	F	6-7	227.0	September 3, 1979	California
+Jock Landale	2022	2024	C	6-11	256.0	October 25, 1995	Saint Mary's
+Carl Landry	2008	2016	F	6-9	248.0	September 19, 1983	Vincennes University, Purdue
+Marcus Landry	2010	2010	F	6-7	230.0	November 1, 1985	Wisconsin
+Mark Landsberger	1978	1984	F-C	6-8	215.0	May 21, 1955	Minnesota, Arizona State
+Jerome Lane	1989	1993	F	6-6	230.0	December 4, 1966	Pitt
+Andrew Lang	1989	2000	C	6-11	245.0	June 28, 1966	Arkansas
+Antonio Lang	1995	2000	F-G	6-8	205.0	May 15, 1972	Duke
+James Lang	2007	2007	C	6-10	285.0	October 17, 1983	
+Trajan Langdon	2000	2002	G	6-3	197.0	May 13, 1976	Duke
+Keith Langford	2008	2008	G	6-4	215.0	September 15, 1983	Kansas
+Romeo Langford	2020	2023	G	6-5	216.0	October 25, 1999	Indiana
+Dan Langhi	2001	2004	F	6-11	220.0	November 28, 1977	Vanderbilt
+Bob Lanier*	1971	1984	C	6-11	250.0	September 10, 1948	St. Bonaventure
+Stu Lantz	1969	1976	G	6-3	175.0	July 13, 1946	Nebraska
+Nicolás Laprovíttola	2017	2017	G	6-4	180.0	January 31, 1990	
+York Larese	1962	1962	G	6-4	183.0	July 18, 1938	UNC
+Shane Larkin	2014	2018	G	5-11	175.0	October 2, 1992	Miami (FL)
+John Laskowski	1976	1977	G	6-6	185.0	June 7, 1953	Indiana
+Stéphane Lasme	2008	2008	F	6-8	215.0	December 17, 1982	UMass
+Dave Lattin	1968	1973	F-C	6-6	225.0	December 23, 1943	Texas-El Paso
+Priest Lauderdale	1997	1998	C	7-4	325.0	August 31, 1973	Central State University
+Rich Laurel	1978	1978	G	6-6	190.0	July 11, 1954	Hofstra
+Harry Laurie	1971	1971	G	6-1	178.0	November 2, 1944	Loyola Chicago, Saint Peter's College
+Walt Lautenbach	1950	1950	G-F	6-2	185.0	November 17, 1922	Wisconsin
+Joffrey Lauvergne	2015	2018	C-F	6-11	220.0	September 30, 1991	
+Tony Lavelli	1950	1951	F	6-3	185.0	July 11, 1926	Yale
+Bob Lavoy	1951	1954	F-C	6-7	185.0	June 29, 1926	Illinois, Western Kentucky
+Acie Law	2008	2011	G	6-3	195.0	January 25, 1985	Texas A&M
+Vic Law	2020	2020	F	6-7	200.0	December 19, 1995	Northwestern
+Gani Lawal	2011	2011	F	6-9	234.0	November 7, 1988	Georgia Tech
+Edmund Lawrence	1981	1981	C	7-0	228.0	December 8, 1952	McNeese State University
+A.J. Lawson	2023	2024	G	6-6	179.0	July 15, 2000	South Carolina
+Jason Lawson	1998	1998	C	6-11	240.0	September 2, 1974	Villanova
+Ty Lawson	2010	2017	G	5-11	195.0	November 3, 1987	UNC
+Jake Layman	2017	2022	F	6-8	209.0	March 7, 1994	Maryland
+Mo Layton	1972	1978	G	6-1	180.0	December 24, 1948	Phoenix College, USC
+Caris LeVert	2017	2024	G-F	6-6	205.0	August 25, 1994	Michigan
+T.J. Leaf	2018	2021	F	6-10	222.0	April 30, 1997	UCLA
+Manny Leaks	1969	1974	C-F	6-8	225.0	November 27, 1945	Niagara University
+Hal Lear	1957	1957	G	6-0	163.0	January 31, 1935	Temple
+Allen Leavell	1980	1989	G	6-1	170.0	May 27, 1957	Oklahoma City University
+Jeff Lebo	1990	1990	G	6-2	180.0	October 5, 1966	UNC
+Eric Leckner	1989	1997	C-F	6-11	265.0	May 27, 1966	Wyoming
+Jalen Lecque	2020	2021	G	6-4	185.0	June 13, 2000	
+Ricky Ledo	2014	2015	G	6-7	195.0	September 10, 1992	
+Butch Lee	1979	1980	G	6-0	185.0	December 5, 1956	Marquette
+Clyde Lee	1967	1976	F-C	6-10	205.0	March 14, 1944	Vanderbilt
+Courtney Lee	2009	2020	G	6-5	215.0	October 3, 1985	Western Kentucky
+Damion Lee	2018	2023	G	6-5	210.0	October 21, 1992	Drexel, Louisville
+Dave Lee	1968	1969	F	6-7	225.0	March 31, 1942	San Francisco
+David Lee	2006	2017	F-C	6-9	245.0	April 29, 1983	Florida
+Dick Lee	1968	1968	F	6-6			Washington
+Doug Lee	1992	1995	G-F	6-5	200.0	October 24, 1964	Texas A&M, Purdue
+George Lee	1961	1968	F-G	6-4	200.0	November 23, 1936	Michigan
+Greg Lee	1975	1976	G	6-3	190.0	December 12, 1951	UCLA
+Keith Lee	1986	1989	F-C	6-10	215.0	December 28, 1962	Memphis
+Kurk Lee	1991	1991	G	6-3	190.0	June 3, 1967	Western Kentucky, Towson University
+Malcolm Lee	2012	2015	G	6-5	200.0	May 22, 1990	UCLA
+Rock Lee	1982	1982	C	6-10	220.0	May 1, 1955	California, San Diego State
+Ron Lee	1977	1982	G	6-4	193.0	November 2, 1952	Oregon
+Russ Lee	1973	1975	G-F	6-5	185.0	January 27, 1950	Marshall
+Saben Lee	2021	2024	G	6-2	183.0	June 23, 1999	Vanderbilt
+Ed Leede	1950	1951	F-G	6-3	185.0	July 17, 1927	Dartmouth College
+Hank Lefkowitz	1947	1947	F	6-2	190.0	August 31, 1923	Case Western Reserve University
+Tim Legler	1990	2000	G	6-4	200.0	December 26, 1966	La Salle
+George Lehmann	1968	1974	G	6-0	180.0	May 1, 1942	Campbell
+Barry Leibowitz	1968	1968	G	6-2	180.0	September 10, 1945	Long Island University
+Walt Lemon Jr.	2018	2019	G	6-3	180.0	July 26, 1992	Bradley
+Alex Len	2014	2024	C	7-0	250.0	June 16, 1993	Maryland
+Voshon Lenard	1996	2006	G	6-4	205.0	May 14, 1973	Minnesota
+Leary Lentz	1968	1969	F	6-6	200.0	February 23, 1945	Houston
+Gary Leonard	1990	1992	C	7-1	250.0	February 16, 1967	Missouri
+Kawhi Leonard	2012	2024	F	6-7	225.0	June 29, 1991	San Diego State
+Meyers Leonard	2013	2023	C-F	7-0	260.0	February 27, 1992	Illinois
+Slick Leonard*	1957	1963	G	6-3	185.0	July 17, 1932	Indiana
+Jim Les	1989	1995	G	5-11	165.0	August 18, 1963	Cleveland State University, Bradley
+Travis Leslie	2012	2012	G	6-4	205.0	March 29, 1990	Georgia
+Ronnie Lester	1981	1986	G	6-2	175.0	January 1, 1959	Iowa
+Clifford Lett	1990	1991	G	6-3	170.0	December 23, 1965	Florida
+Jon Leuer	2012	2019	F	6-10	228.0	May 14, 1989	Wisconsin
+Andrew Levane	1949	1953	F-G	6-2	190.0	April 11, 1920	St. John's
+Fat Lever	1983	1994	G	6-3	170.0	August 18, 1960	Arizona State
+Cliff Levingston	1983	1995	F	6-8	210.0	January 4, 1961	Wichita State
+Bobby Lewis	1968	1971	G	6-3	175.0	March 20, 1945	UNC
+Cedric Lewis	1996	1996	F-C	6-10	235.0	September 24, 1969	Maryland
+Freddie Lewis	1949	1950	F-G	6-2	195.0	January 6, 1921	Eastern Kentucky University
+Freddie Lewis	1967	1977	G	6-0	175.0	July 1, 1943	Eastern Arizona College, Arizona State
+Grady Lewis	1947	1949	F-C	6-7	215.0	March 25, 1917	Oklahoma
+Kira Lewis Jr.	2021	2024	G	6-1	170.0	April 6, 2001	Alabama
+Martin Lewis	1996	1997	F	6-5	210.0	April 28, 1975	Butler County Community College, Seward County Community College
+Maxwell Lewis	2024	2024	F	6-7	195.0	July 27, 2002	Pepperdine
+Mike Lewis	1969	1974	C-F	6-8	225.0	March 18, 1946	Duke
+Quincy Lewis	2000	2004	F	6-7	215.0	June 26, 1977	Minnesota
+Ralph Lewis	1988	1990	F-G	6-6	200.0	March 28, 1963	La Salle
+Rashard Lewis	1999	2014	F	6-10	215.0	August 8, 1979	
+Reggie Lewis	1988	1993	G-F	6-7	195.0	November 21, 1965	Northeastern University
+Scottie Lewis	2022	2022	G	6-5	189.0	March 12, 2000	Florida
+Marcus Liberty	1991	1994	F	6-8	205.0	October 27, 1968	Illinois
+Todd Lichti	1990	1994	G-F	6-4	205.0	January 8, 1967	Stanford
+E.J. Liddell	2024	2024	F	6-7	240.0	December 18, 2000	Ohio State
+DeAndre Liggins	2012	2018	G	6-6	209.0	March 31, 1988	Kentucky
+Bill Ligon	1975	1975	G	6-4	180.0	May 29, 1952	Vanderbilt
+Goose Ligon	1968	1974	F-C	6-7	210.0	February 22, 1944	
+Damian Lillard	2013	2024	G	6-2	195.0	July 15, 1990	Weber State
+Jeremy Lin	2011	2019	G	6-3	200.0	August 23, 1988	Harvard University
+Steve Lingenfelter	1983	1984	F	6-9	225.0	June 10, 1958	Minnesota, South Dakota State
+Alton Lister	1982	1998	C-F	7-0	240.0	October 1, 1958	Arizona State
+Nassir Little	2020	2024	F	6-5	220.0	February 11, 2000	UNC
+Sammy Little	1970	1970	G	6-0	180.0	March 29, 1946	Delta State University
+Gene Littles	1970	1975	G	6-0	160.0	June 29, 1943	High Point University
+Dereck Lively II	2024	2024	C	7-1	230.0	February 12, 2004	Duke
+Isaiah Livers	2022	2024	F	6-7	230.0	July 28, 1998	Michigan
+Chris Livingston	2024	2024	F	6-6	220.0	October 15, 2003	Kentucky
+Randy Livingston	1997	2007	G	6-4	209.0	April 2, 1975	LSU
+Shaun Livingston	2005	2019	G	6-7	192.0	September 11, 1985	
+Ron Livingstone	1950	1951	C	6-10	220.0	October 9, 1925	Saint Mary's, Wyoming
+Horacio Llamas	1997	1998	C	6-11	285.0	July 17, 1973	Grand Canyon University
+Bobby Lloyd	1968	1969	G	6-2	184.0	January 3, 1946	Rutgers University
+Chuck Lloyd	1971	1971	C-F	6-8	220.0	May 22, 1947	Yankton College
+Earl Lloyd*	1951	1960	F-C	6-5	200.0	April 3, 1928	West Virginia State University
+Lewis Lloyd	1982	1990	G-F	6-6	205.0	February 22, 1959	Drake University
+Scott Lloyd	1977	1983	C-F	6-10	230.0	December 19, 1952	Arizona State
+Riney Lochmann	1968	1970	F	6-6	215.0	May 26, 1944	Kansas
+Bob Lochmueller	1953	1953	F	6-5	185.0	June 5, 1927	Louisville
+Rob Lock	1989	1989	F	6-9	225.0	May 22, 1966	Kentucky
+Darrell Lockhart	1984	1984	C	6-9	245.0	September 14, 1960	Auburn
+Ian Lockhart	1991	1991	F	6-8	240.0	June 25, 1967	Tennessee
+Kevin Loder	1982	1984	F-G	6-6	205.0	March 15, 1959	Kentucky State University, Alabama State University
+Don Lofgran	1951	1954	F-C	6-5	200.0	November 8, 1929	San Francisco
+Kenneth Lofton Jr.	2023	2024	F	6-7	275.0	August 14, 2002	Louisiana Tech
+Zach Lofton	2019	2019	G	6-4	180.0	November 18, 1992	Illinois State, Texas Southern, New Mexico State
+Henry Logan	1969	1970	G	6-0	180.0	March 14, 1946	Western Carolina University
+John Logan	1947	1951	G	6-2	175.0	January 1, 1921	Indiana
+Brad Lohaus	1988	1998	F-C	6-11	230.0	September 29, 1964	Iowa
+Art Long	2001	2003	F-C	6-9	250.0	October 1, 1972	Cincinnati
+Grant Long	1989	2003	F	6-8	225.0	March 12, 1966	Eastern Michigan
+John Long	1979	1997	G-F	6-5	195.0	August 28, 1956	Detroit Mercy
+Paul Long	1968	1971	G	6-2	180.0	February 8, 1944	Virginia Tech, Wake Forest
+Shawn Long	2017	2017	C-F	6-9	255.0	January 29, 1993	Louisiana
+Willie Long	1972	1974	F-C	6-8	225.0	March 1, 1950	New Mexico
+Luc Longley	1992	2001	C	7-2	265.0	January 19, 1969	New Mexico
+Kevon Looney	2016	2024	F-C	6-9	222.0	February 6, 1996	UCLA
+Brook Lopez	2009	2024	C	7-1	282.0	April 1, 1988	Stanford
+Felipe López	1999	2002	G	6-5	199.0	December 19, 1974	St. John's
+Raül López	2004	2005	G	6-1	170.0	April 15, 1980	
+Robin Lopez	2009	2024	C	7-1	281.0	April 1, 1988	Stanford
+Ryan Lorthridge	1995	1995	G	6-4	190.0	July 27, 1972	Jackson State University
+Jim Loscutoff	1956	1964	F	6-5	220.0	February 4, 1930	Oregon
+Plummer Lott	1968	1969	F-G	6-5	210.0	December 11, 1945	Seattle University
+Kevin Loughery	1963	1973	G	6-3	190.0	March 28, 1940	Boston College, St. John's
+Didi Louzada	2021	2022	G	6-5	188.0	February 7, 1999	
+Bob Love	1967	1977	F	6-8	215.0	December 8, 1942	Southern University and A&M College
+Kevin Love	2009	2024	F-C	6-8	251.0	September 7, 1988	UCLA
+Stan Love	1972	1975	F	6-9	215.0	April 9, 1949	Oregon
+Clyde Lovellette*	1954	1964	C-F	6-9	234.0	September 7, 1929	Kansas
+Sidney Lowe	1984	1990	G	6-0	195.0	January 21, 1960	NC State
+Charlie Lowery	1972	1972	G	6-3	185.0	November 12, 1949	University of Puget Sound
+Kyle Lowry	2007	2024	G	6-0	196.0	March 25, 1986	Villanova
+Jordan Loyd	2019	2019	G	6-4	210.0	July 27, 1993	Furman University, University of Indianapolis
+Al Lucas	1949	1949	F-G	6-3	195.0	July 4, 1922	Fordham
+Jerry Lucas*	1964	1974	F-C	6-8	230.0	March 30, 1940	Ohio State
+John Lucas	1977	1990	G	6-3	175.0	October 31, 1953	Maryland
+Kalin Lucas	2015	2019	G	6-1	195.0	May 24, 1989	Michigan State
+Maurice Lucas	1975	1988	F-C	6-9	215.0	February 18, 1952	Marquette
+John Lucas III	2006	2017	G	5-11	166.0	November 21, 1982	Baylor, Oklahoma State
+Ted Luckenbill	1962	1963	F	6-6	205.0	July 27, 1939	Houston
+Tyronn Lue	1999	2009	G	6-0	175.0	May 3, 1977	Nebraska
+Jim Luisi	1954	1954	G	6-2	180.0	November 2, 1928	St. Francis College
+Al Lujack	1947	1947	F	6-3	220.0	October 5, 1920	Georgetown
+Phil Lumpkin	1975	1976	G	6-0	165.0	December 20, 1951	Miami University
+Ray Lumpp	1949	1953	G	6-1	178.0	July 11, 1923	NYU
+Gabriel Lundberg	2022	2022	G	6-4	203.0	December 4, 1994	
+Seth Lundy	2024	2024	G-F	6-6	220.0	April 2, 2000	Penn State
+Timothé Luwawu-Cabarrot	2017	2022	F	6-7	220.0	May 9, 1995	
+Tyler Lydon	2018	2019	F	6-10	225.0	April 9, 1996	Syracuse
+Trey Lyles	2016	2024	F	6-9	234.0	November 5, 1995	Kentucky
+R.B. Lynam	1968	1968	G	6-1	190.0		Oklahoma Baptist University
+George Lynch	1994	2005	F	6-8	218.0	September 3, 1970	UNC
+Kevin Lynch	1992	1993	G-F	6-5	195.0	December 24, 1968	Minnesota
+Lonnie Lynn	1970	1970	F	6-7	215.0	May 24, 1943	Upper Iowa University, Wilberforce University
+Mike Lynn	1970	1971	F	6-7	215.0	November 25, 1945	UCLA
