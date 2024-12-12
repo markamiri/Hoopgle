@@ -105,7 +105,7 @@ def stat_search1():
 
     if split == "regular":
         player_url = regularURL(year, name, last_name)
-        result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data,  format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points ,propt_num, cat= tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key, year)
+        result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data,  format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points ,propt_num, cat, ou= tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key, year)
         print(format_percentage, format_percentage1, format_percentage2, format_percentage3, format_percentage4)
         return render_template(
         'result.html',
@@ -126,7 +126,7 @@ def stat_search1():
         format_percentage1=  format_percentage1,
         format_percentage2 = format_percentage2,
         format_percentage3 = format_percentage3,
-        format_percentage4 = format_percentage4, games = games, points= points, propt_num= propt_num, cat = cat,
+        format_percentage4 = format_percentage4, games = games, points= points, propt_num= propt_num, cat = cat, ou = ou
         )
     else:
         player_url = playoffURL(name, last_name)
@@ -250,7 +250,7 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
         try:
             if closest_ou_key == "over":
                 if isinstance(cat_index, int):
-                    if int(df.iloc[index][stat_key])>propt_num:
+                    if int(df.iloc[index][stat_key])>=propt_num:
                         row.loc[ 'T/F'] = '✔️'
                         true_counter+=1
                     else:
@@ -259,11 +259,11 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
                 elif isinstance(cat_index, list) and len(cat_index) == 2:
                     temp1 = row[cat_index[0]]
                     temp2 = row[cat_index[1]]
-                    if int(temp1) + int(temp2) > propt_num:
+                    if int(temp1) + int(temp2) >= propt_num:
                         rows_list.append(row)
             else:
                 if isinstance(cat_index, int):
-                    if int(df.iloc[index][stat_key])>propt_num:
+                    if int(df.iloc[index][stat_key])<=propt_num:
                         row.loc[ 'T/F'] = '✔️'
                         true_counter+=1
                     else:
@@ -271,7 +271,7 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
                 elif isinstance(cat_index, list) and len(cat_index) == 2:
                     temp1 = row[cat_index[0]]
                     temp2 = row[cat_index[1]]
-                    if int(temp1) + int(temp2) < propt_num:
+                    if int(temp1) + int(temp2) <= propt_num:
                         rows_list.append(row)
 
             rows_list.append(row)
@@ -292,14 +292,22 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
 
     points = temp_df[stat_key].tolist()
     cat =stat_key
+    ou = closest_ou_key
     
     # Calculate inactive games
     #inactive_games = df['G'].apply(lambda x: len(str(x)) > 2).sum()
-    inactive_games = (df.iloc[:, 8].str.lower() == "inactive").sum()
+    active_games=0
+    inactive_games=0
+    for i in range(len(df)):
+        if str(df.loc[i, 'G']) == 'G':
+            continue
+        if str(df.loc[i, 'G']) == '0' or str( df.loc[i, 'PTS']) == 'Inactive' or str(df.loc[i, 'PTS']) == 'PTS' or str(df.loc[i, 'PTS']) == 'Did Not Dress':
+            inactive_games+=1
+        else:
+            active_games+=1
 
 
     # Calculate active games
-    active_games = len(df) - (len(df) // 20) - inactive_games
     print("active games", active_games)
     print("inactive_games", inactive_games)
     # Calculate the percentage
@@ -365,7 +373,7 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
     format_percentage = round(float(format_percentage), 2)  # Ensure it's a float with two decimal places
 
     # Return the result message and temp_df for further processing if needed
-    return  result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data, format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points, propt_num, cat
+    return  result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data, format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points, propt_num, cat,ou
 
 def getVariables(stat_cat, over_under, line):
     stat_dict = {
@@ -659,7 +667,8 @@ def last5_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, c
     end_index = len(data_arrays) - 6 # Ensure we don't go out of bounds
 
     while i> end_index: 
-        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress':
+       
+        if  str(data_arrays.loc[i, 'G']) == '0' or str( data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress':
             end_index -=1
         else:
             if closest_ou_key == "over":
@@ -733,7 +742,7 @@ def last10_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
     end_index = len(data_arrays) - 11 # Ensure we don't go out of bounds
 
     while i> end_index: 
-        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress':
+        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Play':
             end_index -=1
         else:
             if closest_ou_key == "over":
@@ -805,7 +814,7 @@ def last15_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
     end_index = len(data_arrays) - 16 # Ensure we don't go out of bounds
 
     while i> end_index: 
-        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress':
+        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Play':
             end_index -=1
         else:
             if closest_ou_key == "over":
@@ -878,7 +887,7 @@ def last20_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
     end_index = len(data_arrays) - 21 # Ensure we don't go out of bounds
 
     while i> end_index: 
-        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress':
+        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Play':
             end_index -=1
         else:
             if closest_ou_key == "over":

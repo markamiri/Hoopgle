@@ -361,17 +361,40 @@
       var points = {{ points | default([]) | tojson }};
       var propt_num = {{ propt_num | default(0) | tojson }}; // Default to 0 if not provided
       var cat = {{ cat | default(0) | tojson }};
+      var ou = {{ou| default("") | tojson }}
+      var backgroundColors = [];
+      var borderColors = [];
+
+      points.forEach((point) => {
+        if (ou === "over"){if (point < propt_num) {
+              backgroundColors.push('rgba(255, 99, 132, 0.2)'); // Red for less than propt_num
+              borderColors.push('rgba(255, 99, 132, 1)');
+          } else {
+              backgroundColors.push('rgba(133,187,101,0.2)'); // Green for greater than or equal to propt_num
+              borderColors.push('rgba(133,187,101,1)');
+          }}
+        else if(ou==="under"){
+          if (point > propt_num) {
+              backgroundColors.push('rgba(255, 99, 132, 0.2)'); // Red for less than propt_num
+              borderColors.push('rgba(255, 99, 132, 1)');
+          } else {
+              backgroundColors.push('rgba(133,187,101,0.2)'); // Green for greater than or equal to propt_num
+              borderColors.push('rgba(133,187,101,1)');
+          }
+        }
+
+      });
       // Create the chart
       var ctx = document.getElementById('pointsChart').getContext('2d');
       var pointsChart = new Chart(ctx, {
-          type: 'line',
+          type: 'bar',
           data: {
               labels: games, // X-axis labels (Games)
               datasets: [{
                   label: cat,
                   data: points, // Y-axis data (Points)
-                  backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                  borderColor: 'rgba(255, 99, 132, 1)',
+                  backgroundColor: backgroundColors,
+                  borderColor: borderColors,
                   borderWidth: 1
               }]
           },
