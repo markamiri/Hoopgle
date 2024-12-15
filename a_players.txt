@@ -9,7 +9,7 @@ Tom Abernethy	1977	1981	F	6-7	220	May 6, 1954	Indiana
 Forest Able	1957	1957	G	6-3	180	July 27, 1932	Western Kentucky
 John Abramovic	1947	1948	F	6-3	195	February 9, 1919	Salem University
 Álex Abrines	2017	2019	G-F	6-6	200	August 1, 1993	
-Precious Achiuwa	2021	2024	F	6-8	225	September 19, 1999	Memphis
+Precious Achiuwa	2021	2025	F	6-8	225	September 19, 1999	Memphis
 Alex Acker	2006	2009	G	6-5	185	January 21, 1983	Pepperdine
 Don Ackerman	1954	1954	G	6-0	183	September 4, 1930	Long Island University
 Mark Acres	1988	1993	F-C	6-11	220	November 15, 1962	Oral Roberts
@@ -22,14 +22,14 @@ Hassan Adams	2007	2009	G	6-4	220	June 20, 1984	Arizona
 Jaylen Adams	2019	2021	G	6-0	225	May 4, 1996	St. Bonaventure
 Jordan Adams	2015	2016	G	6-5	209	July 8, 1994	UCLA
 Michael Adams	1986	1996	G	5-10	162	January 19, 1963	Boston College
-Steven Adams	2014	2023	C	6-11	265	July 20, 1993	Pitt
+Steven Adams	2014	2025	C	6-11	265	July 20, 1993	Pitt
 Rafael Addison	1987	1997	F-G	6-7	215	July 22, 1964	Syracuse
-Bam Adebayo	2018	2024	C-F	6-9	255	July 18, 1997	Kentucky
+Bam Adebayo	2018	2025	C-F	6-9	255	July 18, 1997	Kentucky
 Deng Adel	2019	2019	F	6-7	200	February 1, 1997	Louisville
 Rick Adelman*	1969	1975	G	6-1	175	June 16, 1946	Loyola Marymount
 Jeff Adrien	2011	2015	F	6-7	245	February 10, 1986	UConn
 Arron Afflalo	2008	2018	G-F	6-5	210	October 15, 1985	UCLA
-Ochai Agbaji	2023	2024	G	6-5	215	April 20, 2000	Kansas
+Ochai Agbaji	2023	2025	G	6-5	215	April 20, 2000	Kansas
 Maurice Ager	2007	2011	G	6-5	202	February 9, 1984	Michigan State
 Mark Aguirre	1982	1994	F-G	6-6	232	December 10, 1959	DePaul
 Blake Ahearn	2008	2012	G	6-2	190	May 27, 1984	Missouri State
@@ -42,7 +42,7 @@ DeVaughn Akoon-Purcell	2019	2019	G	6-6	200	June 5, 1993	Illinois State
 Solomon Alabi	2011	2012	C	7-1	251	March 21, 1988	Florida State
 Mark Alarie	1987	1991	F	6-8	217	December 11, 1963	Duke
 Gary Alcorn	1960	1961	C	6-9	225	October 8, 1936	Fresno State
-Santi Aldama	2022	2024	F	6-11	224	January 10, 2001	Loyola (MD)
+Santi Aldama	2022	2025	F	6-11	224	January 10, 2001	Loyola (MD)
 Furkan Aldemir	2015	2015	F-C	6-10	240	August 9, 1991	
 Cole Aldrich	2011	2018	C	6-11	250	October 31, 1988	Kansas
 LaMarcus Aldridge	2007	2022	F-C	6-11	250	July 19, 1985	Texas
@@ -53,15 +53,16 @@ Courtney Alexander	2001	2003	G	6-5	205	April 27, 1977	Virginia, Fresno State
 Gary Alexander	1994	1994	F	6-7	240	November 1, 1969	South Florida
 Joe Alexander	2009	2010	F	6-8	230	December 26, 1986	West Virginia
 Kyle Alexander	2020	2020	F	6-11	220	October 21, 1996	Tennessee
+Trey Alexander	2025	2025	G	6-4	185	May 2, 2003	Creighton
 Ty-Shon Alexander	2021	2021	G	6-3	195	July 16, 1998	Creighton
 Victor Alexander	1992	2002	C-F	6-9	265	August 31, 1969	Iowa State
-Nickeil Alexander-Walker	2020	2024	G	6-5	205	September 2, 1998	Virginia Tech
+Nickeil Alexander-Walker	2020	2025	G	6-5	205	September 2, 1998	Virginia Tech
 Steve Alford	1988	1991	G	6-2	183	November 23, 1964	Indiana
 Rawle Alkins	2019	2019	G	6-5	225	October 29, 1997	Arizona
 Bill Allen	1968	1968	C-F	6-8	205		New Mexico State
 Bob Allen	1969	1969	F	6-9	205	July 17, 1946	Marshall
-Grayson Allen	2019	2024	G	6-4	198	October 8, 1995	Duke
-Jarrett Allen	2018	2024	C-F	6-11	243	April 21, 1998	Texas
+Grayson Allen	2019	2025	G	6-4	198	October 8, 1995	Duke
+Jarrett Allen	2018	2025	C-F	6-11	243	April 21, 1998	Texas
 Jerome Allen	1996	1997	G	6-4	184	January 28, 1973	Penn
 Kadeem Allen	2018	2020	G	6-1	200	January 15, 1993	Arizona
 Lavoy Allen	2012	2017	F-C	6-9	260	February 4, 1989	Temple
@@ -79,7 +80,7 @@ Morris Almond	2008	2012	G	6-6	225	February 2, 1985	Rice University
 Derrick Alston	1995	1997	F	6-11	225	August 20, 1972	Duquesne
 Rafer Alston	2000	2010	G	6-2	171	July 24, 1976	Fresno State
 Peter Aluma	1999	1999	C	6-10	260	April 23, 1973	Liberty
-Jose Alvarado	2022	2024	G	6-0	179	April 12, 1998	Georgia Tech
+Jose Alvarado	2022	2025	G	6-0	179	April 12, 1998	Georgia Tech
 John Amaechi	1996	2003	C-F	6-10	270	November 26, 1970	Vanderbilt, Penn State
 Ashraf Amaya	1996	1997	F	6-8	230	November 23, 1971	Southern Illinois
 Al-Farouq Aminu	2011	2021	F	6-8	220	September 21, 1990	Wake Forest
@@ -103,7 +104,7 @@ Jerome Anderson	1976	1977	G	6-5	195	October 9, 1953	West Virginia
 Justin Anderson	2016	2022	G	6-6	230	November 19, 1993	Virginia
 Kenny Anderson	1992	2005	G	6-1	168	October 9, 1970	Georgia Tech
 Kim Anderson	1979	1979	F	6-7	200	May 12, 1955	Missouri
-Kyle Anderson	2015	2024	F-G	6-9	230	September 20, 1993	UCLA
+Kyle Anderson	2015	2025	F-G	6-9	230	September 20, 1993	UCLA
 Michael Anderson	1989	1989	G	5-11	184	March 23, 1966	Drexel
 Nick Anderson	1990	2002	F-G	6-6	205	January 20, 1968	Illinois
 Richard Anderson	1983	1990	F-C	6-10	240	November 19, 1960	UC Santa Barbara
@@ -117,20 +118,20 @@ Don Anielak	1955	1955	F	6-7	190	November 1, 1930	Missouri State
 Ike Anigbogu	2018	2019	F-C	6-10	250	October 17, 1998	UCLA
 Michael Ansley	1990	1992	F	6-7	225	February 8, 1967	Alabama
 Chris Anstey	1998	2000	C	7-0	249	January 1, 1975	
-Giannis Antetokounmpo	2014	2024	F-G	6-11	242	December 6, 1994	
+Giannis Antetokounmpo	2014	2025	F-G	6-11	242	December 6, 1994	
 Kostas Antetokounmpo	2019	2021	F	6-10	200	November 20, 1997	Dayton
 Thanasis Antetokounmpo	2016	2024	F	6-7	219	July 18, 1992	
 Carmelo Anthony	2004	2022	F	6-7	238	May 29, 1984	Syracuse
-Cole Anthony	2021	2024	G	6-2	185	May 15, 2000	UNC
+Cole Anthony	2021	2025	G	6-2	185	May 15, 2000	UNC
 Greg Anthony	1992	2002	G	6-0	176	November 15, 1967	University of Portland, UNLV
 Joel Anthony	2008	2017	C	6-9	245	August 9, 1982	UNLV
 Pero Antić	2014	2015	C-F	6-11	260	July 29, 1982	
-OG Anunoby	2018	2024	F	6-7	232	July 17, 1997	Indiana
+OG Anunoby	2018	2025	F	6-7	232	July 17, 1997	Indiana
 Keith Appling	2016	2016	G	6-1	185	February 13, 1992	Michigan State
 Rafael Araújo	2005	2007	C	6-11	280	August 12, 1980	BYU
 Stacey Arceneaux	1962	1962	F	6-4	210	February 17, 1936	Iowa State
 Robert Archibald	2003	2004	F	6-11	250	March 29, 1980	Illinois
-Tiny Archibald*	1971	1984	G	6-1	150	September 2, 1948	Texas-El Paso
+Tiny Archibald*	1971	1984	G	6-1	150	September 2, 1948	Arizona Western College, Texas-El Paso
 Ryan Arcidiacono	2018	2024	G	6-3	195	March 26, 1994	Villanova
 Jim Ard	1971	1978	F-C	6-8	215	September 19, 1948	Cincinnati
 Gilbert Arenas	2002	2012	G	6-4	191	January 6, 1982	Arizona
@@ -165,7 +166,7 @@ James Augustine	2007	2008	F	6-10	235	February 27, 1984	Illinois
 Isaac Austin	1992	2002	C	6-10	255	August 18, 1969	Arizona State
 Johnny Austin	1967	1968	G	6-0	170	August 31, 1944	Boston College
 Ken Austin	1984	1984	F	6-9	205	July 15, 1961	Rice University
-Deni Avdija	2021	2024	G-F	6-9	210	January 3, 2001	
+Deni Avdija	2021	2025	G-F	6-9	210	January 3, 2001	
 Anthony Avent	1993	2000	F	6-9	235	October 18, 1969	Seton Hall
 Bird Averitt	1974	1978	G	6-1	170	July 22, 1952	Pepperdine
 William Avery	2000	2002	G	6-2	197	August 8, 1979	Duke
@@ -173,6 +174,6 @@ Dennis Awtrey	1971	1982	C	6-10	235	February 22, 1948	Santa Clara
 Joel Ayayi	2022	2022	G	6-5	180	March 5, 2000	Gonzaga
 Gustavo Ayón	2012	2014	C	6-10	250	April 1, 1985	
 Jeff Ayres	2010	2016	F	6-9	240	April 29, 1987	Arizona State
-Deandre Ayton	2019	2024	C	7-0	250	July 23, 1998	Arizona
+Deandre Ayton	2019	2025	C	7-0	250	July 23, 1998	Arizona
 Kelenna Azubuike	2007	2012	G	6-5	220	December 16, 1983	Kentucky
 Udoka Azubuike	2021	2024	C	6-10	280	September 17, 1999	Kansas

@@ -365,15 +365,21 @@
       var backgroundColors = [];
       var borderColors = [];
 
+      console.log("Points Array:", points);
+      console.log("Games Array:", games);
+      console.log("OU Value:", ou);
+      console.log("Prop Num:", propt_num);
       points.forEach((point) => {
-        if (ou === "over"){if (point < propt_num) {
+      console.log("Point:", point, "Propt_num:", propt_num, "OU:", ou);
+
+        if (ou === "over" || ou === "Over"){if (point < propt_num) {
               backgroundColors.push('rgba(255, 99, 132, 0.2)'); // Red for less than propt_num
               borderColors.push('rgba(255, 99, 132, 1)');
           } else {
               backgroundColors.push('rgba(133,187,101,0.2)'); // Green for greater than or equal to propt_num
               borderColors.push('rgba(133,187,101,1)');
           }}
-        else if(ou==="under"){
+        else if(ou==="under" || ou === "Under"){
           if (point > propt_num) {
               backgroundColors.push('rgba(255, 99, 132, 0.2)'); // Red for less than propt_num
               borderColors.push('rgba(255, 99, 132, 1)');

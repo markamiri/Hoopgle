@@ -85,15 +85,25 @@ def home():
 @app.route('/stat_search', methods=['POST'])
 def stat_search1():
     query = request.form['query']
+    print(query)
+
     tokens = query.split()
     game_logs_html = None
     url_path = "_".join(tokens)
     
 
     year, season, over_under, stat_cat, line, name = identify_query_components(query)
+    print("Debugging Output:")
+    print(f"Year: {year}")
+    print(f"Season: {season}")
+    print(f"Over/Under: {over_under}")
+    print(f"Stat Category: {stat_cat}")
+    print(f"Line: {line}")
+    print(f"Name: {name}")
     name_capital = name.title()
     in_string = "in the"
     url_path_string = " ".join([name_capital, stat_cat, over_under, line, in_string, year, season])
+    print(url_path_string)
     last_name = name.split()[-1]
  
     print(f"Year: {year}, Season: {season}, Over/Under: {over_under}, Stat Cat: {stat_cat}, Line: {line}, Name: {name}")
@@ -106,6 +116,7 @@ def stat_search1():
 
 
     if split == "regular":
+        print("is this being called")
         player_url = regularURL(year, name, last_name)
         result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data,  format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points ,propt_num, cat, ou= tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key, year)
         print(format_percentage, format_percentage1, format_percentage2, format_percentage3, format_percentage4)
@@ -132,11 +143,12 @@ def stat_search1():
         )
     else:
         player_url = playoffURL(name, last_name)
-        end_index,total_game_logs_html, result_message, first_game_log, latest_result_string, second_game_log, second_result_string, third_game_log, third_result_string, fourth_game_log, fourth_result_string, games, points, propt_num, cat= playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key)
+        print("player_url")
+        print(player_url)
+        end_index,total_game_logs_html, result_message, first_game_log, latest_result_string, second_game_log, second_result_string, third_game_log, third_result_string, fourth_game_log, fourth_result_string, games, points, propt_num, cat, ou= playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key)
 
-        print("testing first second game log")
-        print(second_game_log)
-
+        print("testing ou")
+        print(ou)
         return render_template(
         'result.html',
         path=url_path_string,
@@ -151,7 +163,7 @@ def stat_search1():
         last20_result = fourth_result_string,
         last20_df = fourth_game_log,
         end_index = end_index,
-        games = games, points= points, propt_num= propt_num, cat = cat,
+        games = games, points= points, propt_num= propt_num, cat = cat, ou= ou,
         
         )
 
@@ -179,6 +191,12 @@ def add_logo(team_abbreviation):
     return f'<span>{team_abbreviation}{logo_html}</span>'
 
 def playoffURL(name, last_name):
+    print("playoff name")
+    
+    print("Before lower:", name, last_name)
+    name = name.lower()
+    last_name = last_name.lower()
+    print("After lower:", name, last_name)
     url = f"https://www.basketball-reference.com/players/{last_name[0]}/"
     response_p = requests.get(url)
     tables = pd.read_html(response_p.content)[0]
@@ -197,7 +215,7 @@ def playoffURL(name, last_name):
     playoff_first_name, playoff_last_name = closest_playoff_name.split()
     playoff_url_playername = playoff_last_name[:5] + playoff_first_name[:2] + "01"
     career_playoff_url = f"https://www.basketball-reference.com/players/{last_name[0]}/{playoff_url_playername}/gamelog-playoffs"
-
+    print(career_playoff_url)
     return career_playoff_url
 
 def regularOrPlayoffs(season):
@@ -528,6 +546,8 @@ def playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, c
 
     points = temp_df[stat_key].tolist()
     propt_num = int(propt_num)
+    ou = closest_ou_key
+
     print(points)
     print(propt_num)
     #temp_df = temp_df.astype(str)
@@ -570,7 +590,7 @@ def playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, c
 
 
     # Return the result message and temp_df for further processing if needed
-    return end_index,total_game_logs_html, result_message, first_game_log, latest_result_string, second_game_log, second_result_string, third_game_log, third_result_string, fourth_game_log, fourth_result_string,games, points, propt_num, cat
+    return end_index,total_game_logs_html, result_message, first_game_log, latest_result_string, second_game_log, second_result_string, third_game_log, third_result_string, fourth_game_log, fourth_result_string,games, points, propt_num, cat,ou
 
 #Query processing 
 def preprocess_query(query):
@@ -615,8 +635,8 @@ def identify_query_components(query):
 
     # Define patterns
     year_pattern = r"\b(19|20)\d{2}\b"
-    season_pattern = r"\b(playoffs?|regular season|season|regular|post|post season)\b"
-    over_under_pattern = r"\b(over|under)\b"
+    season_pattern = r"\b(Playoffs?|Regular Season|Season|Regular|Post|Post season|playoff|regular|regular season|post season)\b"
+    over_under_pattern = r"\b(Over|Under|over|under)\b"
     line_pattern = r"\b\d+(\.\d+)?\b"
 
     stat_cat_list = [

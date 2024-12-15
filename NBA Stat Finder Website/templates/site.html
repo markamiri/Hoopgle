@@ -171,7 +171,7 @@
       <form id="search-form" action="/stat_search" method="POST">
         <div class="search__input">
           <span id="dynamic-label" class="dynamic-label">Player Name:</span>
-          <!-- Dynamic label -->
+          Dynamic label
           <input
             type="text"
             id="search-box"
@@ -331,7 +331,7 @@
           <span
             style="color: #ffc04a"
             class="material-symbols-outlined"
-            onclick="statSearch()"
+            onclick="statSearch2()"
             >question_mark</span
           >
         </div>
@@ -350,9 +350,39 @@
           </button>
         </div>
       </form>
-      <!-- Search Ends -->
     </div>
     <!-- Main body ends -->
+    <script>
+      function statSearch2() {
+        // Select all the input fields within the container
+        const inputs = document.querySelectorAll("#new-search-container input");
+
+        // Extract the values of all input fields
+        const values = Array.from(inputs).map((input) => input.value.trim());
+
+        // Insert "In The" at the correct position (before Regular/Playoffs input)
+        const finalString = `${values[0]} ${values[1]} ${values[2]} ${values[3]} ${values[4]} ${values[5]}`;
+
+        // Log or display the final string
+        console.log(finalString);
+
+        // Create a hidden form to send the finalString
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.action = "/stat_search"; // Target endpoint
+
+        // Add a hidden input with name "query" and value as finalString
+        const hiddenInput = document.createElement("input");
+        hiddenInput.type = "hidden";
+        hiddenInput.name = "query";
+        hiddenInput.value = finalString;
+
+        // Append the input to the form and submit
+        form.appendChild(hiddenInput);
+        document.body.appendChild(form);
+        form.submit();
+      }
+    </script>
 
     <script>
       // Fetch player names from the backend
@@ -383,7 +413,7 @@
       const lineSelect = document.getElementById("line");
 
       // Loop to generate options from 0.5 to 50 in 0.5 increments
-      for (let i = 0.5; i <= 50; i += 1) {
+      for (let i = 0; i <= 50; i += 1) {
         // Create a new option element
         const option = document.createElement("option");
         option.value = i; // Set the value of the option
