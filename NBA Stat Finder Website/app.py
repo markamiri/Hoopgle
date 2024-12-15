@@ -1,8 +1,9 @@
-from flask import Flask, request, render_template, session, redirect, url_for
+from flask import Flask, request, render_template, session, redirect, url_for, jsonify
 import pandas as pd
 from fuzzywuzzy import fuzz, process
 import requests
 import numpy as np
+import os
 
 import re
 from fuzzywuzzy import process
@@ -94,6 +95,7 @@ def stat_search1():
     in_string = "in the"
     url_path_string = " ".join([name_capital, stat_cat, over_under, line, in_string, year, season])
     last_name = name.split()[-1]
+ 
     print(f"Year: {year}, Season: {season}, Over/Under: {over_under}, Stat Cat: {stat_cat}, Line: {line}, Name: {name}")
 
     split = regularOrPlayoffs(season)
@@ -154,6 +156,18 @@ def stat_search1():
         )
 
 
+@app.route('/get-player-names', methods=['GET'])
+def get_player_names():
+    # File path to playerName.txt
+    file_path = r"C:\Users\Mark\Desktop\NBA Stat Finder\NBA Stat Finder Website\playerName.txt"
+
+    # Read the player names from the file
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
+            player_names = [line.strip() for line in file.readlines()]
+        return jsonify(player_names)  # Send as JSON response
+    else:
+        return jsonify({"error": "File not found"}), 404
 
 
 def add_logo(team_abbreviation):
@@ -209,11 +223,19 @@ def regularURL(year, name, last_name):
 
     closest_name, _ = process.extractOne(name, player_names, scorer=fuzz.token_sort_ratio)
     firstname, lastname = closest_name.split()
-    url_playername = lastname[:5] + firstname[:2] + "01"
+    url_playername = None
+    if lastname[:5] + firstname[:2] == "JohnsCa" or lastname[:5] + firstname[:2] == "JacksJa":
+        url_playername = lastname[:5] + firstname[:2] + "02"
+    else:
+        url_playername = lastname[:5] + firstname[:2] + "01"
+
+
     player_link = f"https://www.basketball-reference.com/players/w/{url_playername}/gamelog/{year}"
     return player_link
 
 def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key, year):
+    print("player_url")
+    print(player_url)
     response = requests.get(player_url)
     tables = pd.read_html(response.content)[7]
     pd.set_option('display.max_rows', None)

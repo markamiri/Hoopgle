@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
@@ -124,6 +125,16 @@
       input:checked + .slider:before {
         transform: translateX(26px);
       }
+
+      .playerProps {
+        max-height: 100px; /* Set the maximum height */
+        overflow-y: auto; /* Enable vertical scrolling */
+      }
+
+      .playerOU {
+        max-height: 100px; /* Set the maximum height */
+        overflow-y: auto; /* Enable vertical scrolling */
+      }
     </style>
   </head>
   <body id="body">
@@ -175,6 +186,156 @@
           >
         </div>
 
+        <div
+          id="new-search-container"
+          style="
+            color: white;
+            background-color: rgb(51, 51, 51);
+            height: 50px;
+            align-items: center;
+            display: flex; /* Enables flexbox */
+            justify-content: center; /* Centers items horizontally */
+            padding-left: 15px;
+            padding-right: 25px;
+            border-radius: 10px;
+          "
+        >
+          <input
+            type="text"
+            list="playerNames"
+            placeholder="Player Name"
+            style="
+              background-color: rgb(51, 51, 51);
+              color: white;
+              border: none;
+              width: 200px;
+              font-size: 16px;
+              text-align: center; /* Horizontally centers the text */
+            "
+          />
+          <datalist id="playerNames"> </datalist>
+
+          <input
+            style="
+              width: 135px;
+              background-color: rgb(51, 51, 51);
+              color: white;
+              font-size: 16px;
+
+              border: none;
+              text-align: center; /* Horizontally centers the text */
+            "
+            type="text"
+            list="playerProps"
+            placeholder="Player Prop"
+          />
+          <datalist id="playerProps">
+            <option value="Points">Points</option>
+            <option value="Rebounds">Rebounds</option>
+            <option value="Assists">Assists</option>
+            <option value="Three pointers">Three pointers</option>
+            <option value="Double Double">Double Double</option>
+            <option value="Triple Double">Triple Double</option>
+            <option value="Pts + Ast">Pts + Ast</option>
+            <option value="Pts + Reb">Pts + Reb</option>
+            <option value="Pts + Reb + Ast">Pts + Reb + Ast</option>
+            <option value="Ast + Reb">Ast + Reb</option>
+          </datalist>
+
+          <input
+            style="
+              width: 115px;
+              background-color: rgb(51, 51, 51);
+              color: white;
+              font-size: 16px;
+
+              border: none;
+              text-align: center; /* Horizontally centers the text */
+            "
+            type="text"
+            list="playerOU"
+            placeholder="Over/Under"
+          />
+          <datalist id="playerOU">
+            <option value="Over">Over</option>
+            <option value="Under">Under</option>
+          </datalist>
+
+          <input
+            style="
+              width: 100px;
+              background-color: rgb(51, 51, 51);
+              color: white;
+              font-size: 16px;
+
+              border: none;
+              text-align: center; /* Horizontally centers the text */
+            "
+            type="text"
+            list="line"
+            placeholder="Line"
+          />
+          <datalist id="line"></datalist>
+
+          <div
+            style="
+              width: 100px;
+              background-color: rgb(51, 51, 51);
+              color: white;
+              font-size: 16px;
+
+              border: none;
+              text-align: center; /* Horizontally centers the text */
+            "
+          >
+            In The
+          </div>
+
+          <input
+            style="
+              width: 150px;
+              background-color: rgb(51, 51, 51);
+              color: white;
+              font-size: 16px;
+
+              border: none;
+              text-align: center; /* Horizontally centers the text */
+            "
+            type="text"
+            list="seasonType"
+            placeholder="Regular/Playoffs"
+          />
+          <datalist id="seasonType">
+            <option value="Regular">Regular season</option>
+            <option value="Playoff">Playoffs</option>
+          </datalist>
+
+          <input
+            style="
+              width: 85px;
+              background-color: rgb(51, 51, 51);
+              color: white;
+              font-size: 16px;
+
+              border: none;
+              text-align: center; /* Horizontally centers the text */
+            "
+            type="text"
+            list="year"
+            placeholder="Year"
+          />
+          <datalist id="year">
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+          </datalist>
+          <span
+            style="color: #ffc04a"
+            class="material-symbols-outlined"
+            onclick="statSearch()"
+            >question_mark</span
+          >
+        </div>
+
         <div class="search__buttons">
           <button
             type="submit"
@@ -193,6 +354,45 @@
     </div>
     <!-- Main body ends -->
 
+    <script>
+      // Fetch player names from the backend
+      fetch("/get-player-names")
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json(); // Parse JSON response
+        })
+        .then((playerNames) => {
+          // Get the datalist element
+          const datalist = document.getElementById("playerNames");
+
+          // Add each player name as an <option>
+          playerNames.forEach((name) => {
+            const option = document.createElement("option");
+            option.value = name;
+            datalist.appendChild(option);
+          });
+        })
+        .catch((error) => {
+          console.error("Error fetching player names:", error);
+        });
+    </script>
+    <script>
+      // Get the select element by its ID
+      const lineSelect = document.getElementById("line");
+
+      // Loop to generate options from 0.5 to 50 in 0.5 increments
+      for (let i = 0.5; i <= 50; i += 1) {
+        // Create a new option element
+        const option = document.createElement("option");
+        option.value = i; // Set the value of the option
+        option.textContent = i; // Set the display text of the option
+
+        // Append the option to the select element
+        lineSelect.appendChild(option);
+      }
+    </script>
     <script>
       function statSearch() {
         const query = document.getElementById("search-box").value;
