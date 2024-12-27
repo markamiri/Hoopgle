@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Logos at Bottom</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div>
+    <canvas id="pointsChart" width="800" height="400"></canvas>
+  </div>
+
+  <script>
+    const teamLogoMap = {
+      "ATL": "/static/team_Logo/nba-atlanta-hawks-logo.png",
+      "BOS": "/static/team_Logo/nba-boston-celtics-logo.png",
+      "BRK": "/static/team_Logo/nba-brooklyn-nets-logo.png",
+      "CHI": "/static/team_Logo/nba-chicago-bulls-logo.png",
+      "CLE": "/static/team_Logo/nba-cleveland-cavaliers-logo.png",
+      "DAL": "/static/team_Logo/nba-dallas-mavericks-logo.png",
+      "DEN": "/static/team_Logo/nba-denver-nuggets-logo.png",
+      "GSW": "/static/team_Logo/nba-golden-state-warriors-logo.png",
+      "HOU": "/static/team_Logo/nba-houston-rockets-logo.png",
+      "IND": "/static/team_Logo/nba-indiana-pacers-logo.png",
+    };
+
+    const games = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const points = [12, 15, 9, 18, 20, 25, 14, 10, 22, 18];
+    const opp = ["ATL", "BOS", "BRK", "CHI", "CLE", "DAL", "DEN", "GSW", "HOU", "IND"];
+
+    // Custom plugin to render logos on the x-axis
+    const xScaleImagePlugin = {
+      id: "xScaleImage",
+      afterDatasetsDraw(chart, args, plugins) {
+        const { ctx, scales } = chart;
+        const xAxis = scales.x;
+        const logoSize = 30; // Adjust the size of the logos
+
+        opp.forEach((team, index) => {
+          const logoUrl = teamLogoMap[team];
+          const x = xAxis.getPixelForValue(index); // Get the position of the tick
+          const y = xAxis.bottom + 5; // Position below the axis
+
+          const img = new Image();
+          img.src = logoUrl;
+          img.onload = () => {
+            ctx.drawImage(img, x - logoSize / 2, y, logoSize, logoSize);
+          };
+        });
+      },
+    };
+
+    Chart.register(xScaleImagePlugin);
+
+    const ctx = document.getElementById("pointsChart").getContext("2d");
+    new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: games, // Keep game numbers at the top
+        datasets: [
+          {
+            label: "Points",
+            data: points,
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            borderColor: "rgba(75, 192, 192, 1)",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+          },
+          x: {
+            ticks: {
+              callback: function (value, index) {
+                return games[index]; // Display game numbers at the top
+              },
+            },
+          },
+        },
+      },
+    });
+  </script>
+</body>
+</html>
