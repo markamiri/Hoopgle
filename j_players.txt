@@ -76,7 +76,7 @@ Amile Jefferson	2019	2020	F	6-9	222	May 7, 1993	Duke
 Cory Jefferson	2015	2016	F	6-9	218	December 26, 1990	Baylor
 Dontell Jefferson	2009	2009	G	6-5	195	December 15, 1983	Arkansas
 Richard Jefferson	2002	2018	F	6-7	233	June 21, 1980	Arizona
-DaQuan Jeffries	2020	2024	G-F	6-5	230	August 30, 1997	Oral Roberts, Tulsa
+DaQuan Jeffries	2020	2025	G-F	6-5	230	August 30, 1997	Oral Roberts, Tulsa
 Jared Jeffries	2003	2013	F	6-11	230	November 25, 1981	Indiana
 Trey Jemison	2024	2025	C	6-11	260	November 28, 1999	Clemson, UAB
 Charles Jenkins	2012	2013	G	6-3	220	February 28, 1989	Hofstra
@@ -97,7 +97,7 @@ Isaiah Joe	2021	2025	G	6-5	181	July 2, 1999	Arkansas
 Britton Johnsen	2004	2005	F	6-10	210	July 8, 1979	Utah
 AJ Johnson	2025	2025	G	6-4	160	December 1, 2004	
 Alexander Johnson	2007	2008	F	6-9	240	February 8, 1983	Florida State
-Alize Johnson	2019	2023	F	6-7	212	April 22, 1996	Missouri State
+Alize Johnson	2019	2023	F	6-7	212	April 22, 1996	Frank Phillips College, Missouri State
 Amir Johnson	2006	2019	F-C	6-9	240	May 1, 1987	
 Andy Johnson	1959	1962	F-G	6-5	215	November 8, 1932	University of Portland
 Anthony Johnson	1998	2010	G	6-3	190	October 2, 1974	College of Charleston

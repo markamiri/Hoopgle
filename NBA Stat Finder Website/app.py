@@ -145,7 +145,7 @@ def stat_search1():
         player_url = playoffURL(name, last_name)
         print("player_url")
         print(player_url)
-        end_index,total_game_logs_html, result_message, first_game_log, latest_result_string, second_game_log, second_result_string, third_game_log, third_result_string, fourth_game_log, fourth_result_string, games, points, propt_num, cat, ou= playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key)
+        end_index,total_game_logs_html, result_message, first_game_log, latest_result_string, second_game_log, second_result_string, third_game_log, third_result_string, fourth_game_log, fourth_result_string, games, points, propt_num, cat, ou, opp= playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key)
 
         print("testing ou")
         print(ou)
@@ -163,7 +163,7 @@ def stat_search1():
         last20_result = fourth_result_string,
         last20_df = fourth_game_log,
         end_index = end_index,
-        games = games, points= points, propt_num= propt_num, cat = cat, ou= ou,
+        games = games, points= points, propt_num= propt_num, cat = cat, ou= ou, opp = opp,
         
         )
 
@@ -474,10 +474,13 @@ def playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, c
     # Create a new DataFrame with the column headers and all data including the first row
     df = pd.DataFrame(data, columns=columns)
     df = df.fillna(0)
+   
 
 
 
-    df['T/F'] = None
+
+
+    df['T/F'] = None    
     true_counter = 0
 
 
@@ -492,6 +495,7 @@ def playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, c
     change this for both table scrape and playoff table scrape
     (DO ASAP)
     """
+
   # Iterate over each row of the DataFrame
     for index, row in df.iterrows():
         try:
@@ -525,6 +529,8 @@ def playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, c
 
     # Convert the list of Series (rows) to a DataFrame
     temp_df = pd.DataFrame(rows_list, columns=df.columns)
+    opp = temp_df['Opp'].tolist()
+
 
     # Calculate inactive games
     inactive_games = df['G'].apply(lambda x: len(str(x)) > 2).sum()
@@ -543,18 +549,30 @@ def playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, c
    
     temp_df =clean_dataframe_playoff(temp_df)
     games = temp_df['G'].tolist()
+
     print(games)
     cat =stat_key
     print("stat_key")
     print(stat_key)
 
     points = temp_df[stat_key].tolist()
+
     propt_num = int(propt_num)
     ou = closest_ou_key
 
     print(points)
     print(propt_num)
+
+    # Filter out indices where games, points, or opp contain numeric 0
+    filtered_indices = [i for i in range(len(games)) if games[i] != 0 and points[i] != 0 and opp[i] != 0]
+
+    # Create new filtered lists based on the filtered indices
+    games = [games[i] for i in filtered_indices]
+    points = [points[i] for i in filtered_indices]
+    opp = [opp[i] for i in filtered_indices]
     #temp_df = temp_df.astype(str)
+
+    temp_df = temp_df[temp_df['G#'] != 0]
 
     total_game_logs_html = temp_df.to_html(classes='game-logs-table', index=False, escape=False)
      # Split the HTML rows using '</tr>' but preserve the splitting point
@@ -594,7 +612,7 @@ def playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, c
 
 
     # Return the result message and temp_df for further processing if needed
-    return end_index,total_game_logs_html, result_message, first_game_log, latest_result_string, second_game_log, second_result_string, third_game_log, third_result_string, fourth_game_log, fourth_result_string,games, points, propt_num, cat,ou
+    return end_index,total_game_logs_html, result_message, first_game_log, latest_result_string, second_game_log, second_result_string, third_game_log, third_result_string, fourth_game_log, fourth_result_string,games, points, propt_num, cat,ou, opp
 
 #Query processing 
 def preprocess_query(query):
