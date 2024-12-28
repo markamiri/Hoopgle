@@ -39,7 +39,10 @@
         color: var(--text-color);
         transition: background-color 0.3s ease, color 0.3s ease;
       }
-
+      .main_body {
+        width: 1100px;
+        margin: 0 auto;
+      }
       .header {
         display: flex;
         justify-content: space-between;
@@ -129,11 +132,205 @@
       .playerProps {
         max-height: 100px; /* Set the maximum height */
         overflow-y: auto; /* Enable vertical scrolling */
+
+        width: 135px;
+        background-color: rgb(51, 51, 51);
+        color: white;
+        font-size: 16px;
+
+        border: none;
+        text-align: center; /* Horizontally centers the text */
       }
 
       .playerOU {
         max-height: 100px; /* Set the maximum height */
         overflow-y: auto; /* Enable vertical scrolling */
+      }
+      .playerNames {
+        background-color: rgb(51, 51, 51);
+        color: white;
+        border: none;
+        width: 200px;
+        font-size: 16px;
+        text-align: center; /* Horizontally centers the text */
+      }
+
+      .playerOU {
+        width: 115px;
+        background-color: rgb(51, 51, 51);
+        color: white;
+        font-size: 16px;
+
+        border: none;
+        text-align: center; /* Horizontally centers the text */
+      }
+      .line {
+        width: 100px;
+        background-color: rgb(51, 51, 51);
+        color: white;
+        font-size: 16px;
+
+        border: none;
+        text-align: center; /* Horizontally centers the text */
+      }
+
+      .inThe {
+        width: 100px;
+        background-color: rgb(51, 51, 51);
+        color: white;
+        font-size: 16px;
+
+        border: none;
+        text-align: center; /* Horizontally centers the text */
+      }
+      .questionMark {
+        color: #ffc04a;
+      }
+      .seasonType {
+        width: 150px;
+        background-color: rgb(51, 51, 51);
+        color: white;
+        font-size: 16px;
+
+        border: none;
+        text-align: center; /* Horizontally centers the text */
+      }
+      .Year {
+        width: 85px;
+        background-color: rgb(51, 51, 51);
+        color: white;
+        font-size: 16px;
+
+        border: none;
+        text-align: center; /* Horizontally centers the text */
+      }
+      .new-search-container {
+        color: white;
+        background-color: rgb(51, 51, 51);
+        height: 50px;
+        align-items: center;
+        display: flex; /* Enables flexbox */
+        justify-content: center; /* Centers items horizontally */
+        padding-left: 15px;
+        padding-right: 25px;
+        border-radius: 10px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .main_body {
+          width: 100%;
+        }
+        .main_body {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start; /* Align the content to the top */
+          align-items: center;
+          flex-grow: 1; /* Keeps the flexibility of taking up space */
+          width: 100%;
+          margin-top: 90px; /* Shift the whole section upwards */
+        }
+        #new-search-container {
+          color: white;
+          align-items: center;
+          display: flex; /* Enables flexbox */
+          flex-direction: column; /* Stack items vertically */
+          justify-content: center; /* Centers items vertically */
+          padding: 15px; /* Add some padding around the container */
+          border-radius: 10px;
+          gap: 10px; /* Add spacing between items */
+          background-color: transparent;
+          margin-top: 160px;
+        }
+        .search__buttons {
+          display: none;
+        }
+        .playerNames {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 3px;
+          width: 230px;
+          text-align: center; /* Centers text horizontally */
+          display: flex; /* Enable flexbox */
+          justify-content: center; /* Centers content horizontally */
+          align-items: center; /* Centers content vertically */
+        }
+        .playerProps {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 3px;
+          width: 230px;
+          text-align: center; /* Centers text horizontally */
+          display: flex; /* Enable flexbox */
+          justify-content: center; /* Centers content horizontally */
+          align-items: center; /* Centers content vertically */
+        }
+        .playerOU {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 3px;
+          width: 230px;
+          text-align: center; /* Centers text horizontally */
+          display: flex; /* Enable flexbox */
+          justify-content: center; /* Centers content horizontally */
+          align-items: center; /* Centers content vertically */
+        }
+        .inThe {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 3px;
+          width: 230px;
+          text-align: center; /* Centers text horizontally */
+          display: flex; /* Enable flexbox */
+          justify-content: center; /* Centers content horizontally */
+          align-items: center; /* Centers content vertically */
+          display: none;
+        }
+        .seasonType {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 3px;
+          width: 230px;
+          text-align: center; /* Centers text horizontally */
+          display: flex; /* Enable flexbox */
+          justify-content: center; /* Centers content horizontally */
+          align-items: center; /* Centers content vertically */
+        }
+        .Year {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 3px;
+          width: 230px;
+          text-align: center; /* Centers text horizontally */
+          display: flex; /* Enable flexbox */
+          justify-content: center; /* Centers content horizontally */
+          align-items: center; /* Centers content vertically */
+        }
+        .line {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 3px;
+          width: 230px;
+          text-align: center; /* Centers text horizontally */
+          display: flex; /* Enable flexbox */
+          justify-content: center; /* Centers content horizontally */
+          align-items: center; /* Centers content vertically */
+        }
+        .questionMark {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          border-radius: 3px;
+          width: 230px;
+          text-align: center; /* Centers text horizontally */
+          display: flex; /* Enable flexbox */
+          justify-content: center; /* Centers content horizontally */
+          align-items: center; /* Centers content vertically */
+          color: black;
+          background-color: #ffc04a;
+          font-size: 16px;
+
+          border: none;
+          text-align: center; /* Horizontally centers the text */
+        }
       }
     </style>
   </head>
@@ -191,45 +388,17 @@
           >
         </div>
 
-        <div
-          id="new-search-container"
-          style="
-            color: white;
-            background-color: rgb(51, 51, 51);
-            height: 50px;
-            align-items: center;
-            display: flex; /* Enables flexbox */
-            justify-content: center; /* Centers items horizontally */
-            padding-left: 15px;
-            padding-right: 25px;
-            border-radius: 10px;
-          "
-        >
+        <div id="new-search-container" class="new-search-container">
           <input
             type="text"
             list="playerNames"
+            class="playerNames"
             placeholder="Player Name"
-            style="
-              background-color: rgb(51, 51, 51);
-              color: white;
-              border: none;
-              width: 200px;
-              font-size: 16px;
-              text-align: center; /* Horizontally centers the text */
-            "
           />
           <datalist id="playerNames"> </datalist>
 
           <input
-            style="
-              width: 135px;
-              background-color: rgb(51, 51, 51);
-              color: white;
-              font-size: 16px;
-
-              border: none;
-              text-align: center; /* Horizontally centers the text */
-            "
+            class="playerProps"
             type="text"
             list="playerProps"
             placeholder="Player Prop"
@@ -248,15 +417,7 @@
           </datalist>
 
           <input
-            style="
-              width: 115px;
-              background-color: rgb(51, 51, 51);
-              color: white;
-              font-size: 16px;
-
-              border: none;
-              text-align: center; /* Horizontally centers the text */
-            "
+            class="playerOU"
             type="text"
             list="playerOU"
             placeholder="Over/Under"
@@ -266,76 +427,30 @@
             <option value="Under">Under</option>
           </datalist>
 
-          <input
-            style="
-              width: 100px;
-              background-color: rgb(51, 51, 51);
-              color: white;
-              font-size: 16px;
-
-              border: none;
-              text-align: center; /* Horizontally centers the text */
-            "
-            type="text"
-            list="line"
-            placeholder="Line"
-          />
+          <input type="text" list="line" placeholder="Line" class="line" />
           <datalist id="line"></datalist>
 
-          <div
-            style="
-              width: 100px;
-              background-color: rgb(51, 51, 51);
-              color: white;
-              font-size: 16px;
-
-              border: none;
-              text-align: center; /* Horizontally centers the text */
-            "
-          >
-            In The
-          </div>
+          <div class="inThe">In The</div>
 
           <input
-            style="
-              width: 150px;
-              background-color: rgb(51, 51, 51);
-              color: white;
-              font-size: 16px;
-
-              border: none;
-              text-align: center; /* Horizontally centers the text */
-            "
             type="text"
             list="seasonType"
             placeholder="Regular/Playoffs"
+            class="seasonType"
+            id="seasonTypeInput"
           />
           <datalist id="seasonType">
             <option value="Regular">Regular season</option>
             <option value="Playoff">Playoffs</option>
           </datalist>
 
-          <input
-            style="
-              width: 85px;
-              background-color: rgb(51, 51, 51);
-              color: white;
-              font-size: 16px;
-
-              border: none;
-              text-align: center; /* Horizontally centers the text */
-            "
-            type="text"
-            list="year"
-            placeholder="Year"
-          />
+          <input class="Year" type="text" list="year" placeholder="Year" />
           <datalist id="year">
             <option value="2025">2025</option>
             <option value="2024">2024</option>
           </datalist>
           <span
-            style="color: #ffc04a"
-            class="material-symbols-outlined"
+            class="material-symbols-outlined questionMark"
             onclick="statSearch2()"
             >question_mark</span
           >
@@ -412,6 +527,24 @@
         .catch((error) => {
           console.error("Error fetching player names:", error);
         });
+    </script>
+
+    <script>
+      // JavaScript to change the placeholder dynamically
+      function updatePlaceholder() {
+        const input = document.getElementById("seasonTypeInput");
+        if (window.innerWidth <= 600) {
+          input.placeholder = "In The Regular/Playoffs";
+        } else {
+          input.placeholder = "Regular/Playoffs";
+        }
+      }
+
+      // Attach listener to window resize
+      window.addEventListener("resize", updatePlaceholder);
+
+      // Initial call to set placeholder on load
+      updatePlaceholder();
     </script>
     <script>
       // Get the select element by its ID
