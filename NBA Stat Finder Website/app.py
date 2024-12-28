@@ -171,7 +171,8 @@ def stat_search1():
 @app.route('/get-player-names', methods=['GET'])
 def get_player_names():
     # File path to playerName.txt
-    file_path = r"C:\Users\Mark\Desktop\NBA Stat Finder\NBA Stat Finder Website\playerName.txt"
+    file_path = os.path.join(os.path.dirname(__file__), 'playerName.txt')
+
 
     # Read the player names from the file
     if os.path.exists(file_path):
