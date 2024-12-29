@@ -381,8 +381,9 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
 }
 
 
+    reversed_df = temp_df.iloc[::-1]
 
-    game_logs_html = temp_df.to_html(classes='game-logs-table', index=False, escape=False)
+    game_logs_html = reversed_df.to_html(classes='game-logs-table', index=False, escape=False)
 
       # Split the HTML rows using '</tr>' but preserve the splitting point
     rows = game_logs_html.split('<tr>')[1:]  # Skip the first split which is before the first <tr>
@@ -574,8 +575,9 @@ def playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, c
     #temp_df = temp_df.astype(str)
 
     temp_df = temp_df[temp_df['G#'] != 0]
+    reversed_df = temp_df.iloc[::-1]
 
-    total_game_logs_html = temp_df.to_html(classes='game-logs-table', index=False, escape=False)
+    total_game_logs_html = reversed_df.to_html(classes='game-logs-table', index=False, escape=False)
      # Split the HTML rows using '</tr>' but preserve the splitting point
     rows = total_game_logs_html.split('<tr>')[1:]  # Skip the first split which is before the first <tr>
 
@@ -774,7 +776,6 @@ def last5_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, c
 
     
     temp_df = clean_dataframe(temp_df)
-
     game_logs_html = temp_df.to_html(classes='game-logs-table', index=False, escape=False)
 
     # Split the HTML rows using '</tr>' but preserve the splitting point

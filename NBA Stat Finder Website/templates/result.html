@@ -109,6 +109,47 @@
         width: 0;
         height: 0;
       }
+      .chart-container {
+        width: 1000px;
+        height: 500px;
+        max-width: 800px;
+        overflow-x: scroll;
+        padding-bottom: 15px;
+      }
+      .chart-container-body {
+        height: 475px;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 3.9px; /* Adjusts scrollbar width */
+        height: 10px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent; /* Optional: transparent background for track */
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: rgba(
+          68,
+          68,
+          68,
+          255
+        ); /* Color of the scrollbar thumb */
+        border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #555; /* Slightly lighter color on hover for effect */
+      }
+
+      .header-container {
+        width: 100%; /* Ensure it takes up full width of the parent */
+        max-width: 100%; /* Prevent it from overflowing */
+        overflow-wrap: break-word; /* Ensure long text wraps */
+        margin: 0 auto; /* Center the text */
+        padding: 10px; /* Add some padding for spacing */
+        text-align: center;
+      }
 
       .slider {
         position: absolute;
@@ -145,6 +186,7 @@
       .tab {
         overflow: hidden;
         border-bottom: 1px solid #ccc;
+        margin-top: 15px;
       }
       .tab button {
         background-color: inherit;
@@ -190,23 +232,22 @@
 
     <!-- Main body starts -->
     <div class="main_body">
-      <p style="margin-top: 30px; font-size: 20px">{{ path }} ?</p>
-      <p>
-        <!--
+      <!--<p style="margin-top: 30px; font-size: 20px">{{ path }} ?</p>-->
+      <!--<p>
+        
         Format Percentage:
         <span id="format-percentage">{{ format_percentage |safe }}</span>
-        -->
-      </p>
+        
+      </p>-->
 
-      <h1 id="result-message" style="margin-bottom: 30px">result_message</h1>
+      <h1 class="header-container" id="result-message">result_message</h1>
       <!-- Assign an ID to the result message -->
 
       <!-- Add a canvas for the chart -->
-      <div class="chart-container" style="width: 1200px; height: 600px">
-        <canvas
-          id="pointsChart"
-          style="min-width: 1200px; height: 300px"
-        ></canvas>
+      <div class="chart-container custom-scrollbar">
+        <div class="chart-container-body">
+          <canvas id="pointsChart"></canvas>
+        </div>
       </div>
       <div class="tab">
         <!-- Playoff -->
@@ -333,121 +374,136 @@
     <!-- Main body ends -->
 
     <script>
-      // Dark Mode Toggle
-      const toggleSwitch = document.getElementById("themeToggle");
-      const body = document.getElementById("body");
+            // Dark Mode Toggle
+            const toggleSwitch = document.getElementById("themeToggle");
+            const body = document.getElementById("body");
 
-      // Check saved theme preference on load
-      document.addEventListener("DOMContentLoaded", () => {
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "dark-mode") {
-          body.classList.add("dark-mode");
-          toggleSwitch.checked = true;
-        }
-      });
+            // Check saved theme preference on load
+            document.addEventListener("DOMContentLoaded", () => {
+              const savedTheme = localStorage.getItem("theme");
+              if (savedTheme === "dark-mode") {
+                body.classList.add("dark-mode");
+                toggleSwitch.checked = true;
+              }
+            });
 
-      // Toggle dark mode on switch change
-      toggleSwitch.addEventListener("change", () => {
-        body.classList.toggle("dark-mode");
+            // Toggle dark mode on switch change
+            toggleSwitch.addEventListener("change", () => {
+              body.classList.toggle("dark-mode");
 
-        // Save the preference in localStorage
-        if (body.classList.contains("dark-mode")) {
-          localStorage.setItem("theme", "dark-mode");
-        } else {
-          localStorage.setItem("theme", "light-mode");
-        }
-      });
+              // Save the preference in localStorage
+              if (body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark-mode");
+              } else {
+                localStorage.setItem("theme", "light-mode");
+              }
+            });
 
-      var games = {{ games | default([]) | tojson }};
-      var points = {{ points | default([]) | tojson }};
-      var propt_num = {{ propt_num | default(0) | tojson }}; // Default to 0 if not provided
-      var cat = {{ cat | default(0) | tojson }};
-      var ou = {{ ou | default("") | tojson }};
-      var backgroundColors = [];
-      var borderColors = [];
-      var opp = {{ opp | default([]) | tojson }};
+            var games = {{ games | default([]) | tojson }};
+            var points = {{ points | default([]) | tojson }};
+            var propt_num = {{ propt_num | default(0) | tojson }}; // Default to 0 if not provided
+            var cat = {{ cat | default(0) | tojson }};
+            var ou = {{ ou | default("") | tojson }};
+            var backgroundColors = [];
+            var borderColors = [];
+            var opp = {{ opp | default([]) | tojson }};
+            games.reverse();
+            points.reverse();
+            opp.reverse();
+            console.log("Points Array:", points);
+            console.log("Games Array:", games);
+            console.log("Opp Array:", opp);
 
-      console.log("Points Array:", points);
-      console.log("Games Array:", games);
-      console.log("Opp Array:", opp);
+            points.forEach((point) => {
+              if (ou === "over" || ou === "Over") {
+                if (point < propt_num) {
+                  backgroundColors.push('rgba(255, 99, 132, 0.2)'); // Red for less than propt_num
+                  borderColors.push('rgba(255, 99, 132, 1)');
+                } else {
+                  backgroundColors.push('rgba(133,187,101,0.2)'); // Green for greater than or equal to propt_num
+                  borderColors.push('rgba(133,187,101,1)');
+                }
+              } else if (ou === "under" || ou === "Under") {
+                if (point > propt_num) {
+                  backgroundColors.push('rgba(255, 99, 132, 0.2)'); // Red for greater than propt_num
+                  borderColors.push('rgba(255, 99, 132, 1)');
+                } else {
+                  backgroundColors.push('rgba(133,187,101,0.2)'); // Green for less than propt_num
+                  borderColors.push('rgba(133,187,101,1)');
+                }
+              }
+            });
 
-      points.forEach((point) => {
-        if (ou === "over" || ou === "Over") {
-          if (point < propt_num) {
-            backgroundColors.push('rgba(255, 99, 132, 0.2)'); // Red for less than propt_num
-            borderColors.push('rgba(255, 99, 132, 1)');
-          } else {
-            backgroundColors.push('rgba(133,187,101,0.2)'); // Green for greater than or equal to propt_num
-            borderColors.push('rgba(133,187,101,1)');
-          }
-        } else if (ou === "under" || ou === "Under") {
-          if (point > propt_num) {
-            backgroundColors.push('rgba(255, 99, 132, 0.2)'); // Red for greater than propt_num
-            borderColors.push('rgba(255, 99, 132, 1)');
-          } else {
-            backgroundColors.push('rgba(133,187,101,0.2)'); // Green for less than propt_num
-            borderColors.push('rgba(133,187,101,1)');
-          }
-        }
-      });
-
-      // Custom Plugin to Add Games Labels on Top
+            // Custom Plugin to Add Games Labels on Top
 
 
-      // Create the chart
-      var ctx = document.getElementById("pointsChart").getContext("2d");
-      var pointsChart = new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: opp, // X-axis labels (Games)
-          datasets: [
-            {
-              label: cat,
-              data: points, // Y-axis data (Points)
-              backgroundColor: backgroundColors,
-              borderColor: borderColors,
-              borderWidth: 1,
-            },
-          ],
-        },
-        options: {
-          maintainAspectRatio: false,
-          scales: {
-            y: {
-              beginAtZero: true, // Start y-axis from 0
-              grid: {
-                color: "rgba(36, 36, 36, 0.2)", // Light color for grid lines
-                lineWidth: 3, // Set grid line width for better visibility
+            // Create the chart
+            var ctx = document.getElementById("pointsChart").getContext("2d");
+            var pointsChart = new Chart(ctx, {
+              type: "bar",
+              data: {
+                labels: opp, // X-axis labels (Games)
+                datasets: [
+                  {
+                    label: cat,
+                    data: points, // Y-axis data (Points)
+                    backgroundColor: backgroundColors,
+                    borderColor: borderColors,
+                    borderWidth: 1,
+                  },
+                ],
               },
-              ticks: {
-                stepSize: 1, // Always display ticks for every 1 unit
-              },
+              options: {
+                maintainAspectRatio: false,
+                scales: {
+                  y: {
+                    beginAtZero: true, // Start y-axis from 0
+                    grid: {
+                      color: "rgba(36, 36, 36, 0.2)", // Light color for grid lines
+                      lineWidth: 3, // Set grid line width for better visibility
+                    },
+                    ticks: {
+                      stepSize: 1, // Always display ticks for every 1 unit
+                    },
+                  },
+                  x: {
+                    grid: {
+                      color: "rgba(36, 36, 36, 0.2)", // Light color for grid lines
+                      lineWidth: 3, // Set grid line width for better visibility
+                    },
+                  },
+                },
+                plugins: {
+                        legend: {
+              display: false, // Completely hide the legend
             },
-            x: {
-              grid: {
-                color: "rgba(36, 36, 36, 0.2)", // Light color for grid lines
-                lineWidth: 3, // Set grid line width for better visibility
-              },
-            },
-          },
-          plugins: {
-                  legend: {
-        display: false, // Completely hide the legend
-      },
-            annotation: {
-              annotations: {
-                horizontalLine: {
-                  type: "line",
-                  yMin: propt_num,
-                  yMax: propt_num,
-                  borderColor: "rgba(58, 58, 58)", // Color of the horizontal line
-                  borderWidth: 2,
+                  annotation: {
+                    annotations: {
+                      horizontalLine: {
+                        type: "line",
+                        yMin: propt_num,
+                        yMax: propt_num,
+                        borderColor: "rgba(58, 58, 58)", // Color of the horizontal line
+                        borderWidth: 2,
+                      },
+                    },
+                  },
                 },
               },
-            },
-          },
-        },
-      });
+
+            });
+            const containerBody = document.querySelector('.chart-container-body')
+      if (pointsChart.data.labels.length > 80) {
+        containerBody.style.width = '2200px';
+      } else if (pointsChart.data.labels.length > 60) {
+        containerBody.style.width = '2000px';
+      } else if (pointsChart.data.labels.length > 40) {
+        containerBody.style.width = '1600px';
+      } else if (pointsChart.data.labels.length > 20) {
+        containerBody.style.width = '1400px';
+      } else if (pointsChart.data.labels.length > 10) {
+        containerBody.style.width = '1000px';
+      }
     </script>
   </body>
 </html>
