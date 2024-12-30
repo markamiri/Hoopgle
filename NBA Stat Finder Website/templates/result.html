@@ -1,3 +1,4 @@
+<!--Playoff mobile view needs to be fixed-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -211,6 +212,79 @@
       .tabcontent.active {
         display: block;
       }
+
+      @media only screen and (max-width: 600px) {
+        .chart-container {
+          width: 1000px;
+          height: 430px;
+          max-width: 330px;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding-bottom: 15px;
+          -webkit-overflow-scrolling: touch; /* Enables smooth scrolling for mobile */
+        }
+        .chart-container-body {
+          height: 430px;
+        }
+
+        .tab {
+          flex-direction: column; /* Stack buttons vertically */
+          align-items: center; /* Center items in the middle */
+          margin-left: 75px;
+        }
+
+        .tab button {
+          width: 80%; /* Buttons take up 80% of the screen width */
+          text-align: center; /* Center-align text inside buttons */
+        }
+        .header-container {
+          margin-top: 20px;
+          width: 70%;
+          margin-bottom: 20px;
+        }
+
+        .game-logs-table {
+          width: 100%; /* Makes table responsive */
+          max-width: 430px; /* Limits the maximum width */
+          overflow-x: auto; /* Adds horizontal scrolling if needed */
+          border-collapse: collapse; /* Ensures borders collapse for cleaner layout */
+          margin-left: -150px;
+        }
+
+        .game-logs-table th,
+        .game-logs-table td {
+          padding: 8px; /* Adds padding for better readability */
+          text-align: center; /* Centers text */
+        }
+        #RegularGameLogs {
+          width: 100%; /* Ensures the parent container uses the full width */
+          max-width: 450px; /* Matches table size for consistent layout */
+          overflow-x: auto; /* Allows horizontal scrolling for large tables */
+        }
+
+        #Last5 {
+          width: 100%; /* Ensures the parent container uses the full width */
+          max-width: 450px; /* Matches table size for consistent layout */
+          overflow-x: auto; /* Allows horizontal scrolling for large tables */
+        }
+        #Last10 {
+          width: 100%; /* Ensures the parent container uses the full width */
+          max-width: 450px; /* Matches table size for consistent layout */
+          overflow-x: auto; /* Allows horizontal scrolling for large tables */
+        }
+
+        #Last15 {
+          width: 100%; /* Ensures the parent container uses the full width */
+          max-width: 450px; /* Matches table size for consistent layout */
+          overflow-x: auto; /* Allows horizontal scrolling for large tables */
+        }
+
+        #Last20 {
+          width: 100%; /* Ensures the parent container uses the full width */
+          max-width: 450px; /* Matches table size for consistent layout */
+          overflow-x: auto; /* Allows horizontal scrolling for large tables */
+        }
+      }
     </style>
   </head>
   <body id="body">
@@ -220,7 +294,7 @@
         <a href="/" class="hoopgle">hoopgle</a>
       </div>
       <div class="header__right">
-        <a href="#">Contact Us</a>
+        <a style="color: white" href="#">Contact Us</a>
         <!-- Dark Mode Toggle Switch -->
         <label class="toggle-switch">
           <input type="checkbox" id="themeToggle" />

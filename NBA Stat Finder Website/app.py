@@ -243,7 +243,7 @@ def regularURL(year, name, last_name):
     closest_name, _ = process.extractOne(name, player_names, scorer=fuzz.token_sort_ratio)
     firstname, lastname = closest_name.split()
     url_playername = None
-    if lastname[:5] + firstname[:2] == "JohnsCa" or lastname[:5] + firstname[:2] == "JacksJa" or lastname[:5] + firstname[:2] == "MilleBr" or lastname[:5] + firstname[:2] == "BrownJa":
+    if lastname[:5] + firstname[:2] == "JohnsCa" or lastname[:5] + firstname[:2] == "JacksJa" or lastname[:5] + firstname[:2] == "MilleBr" or lastname[:5] + firstname[:2] == "BrownJa" or lastname[:5] + firstname[:2] == "DavisAn":
         url_playername = lastname[:5] + firstname[:2] + "02"
     else:
         url_playername = lastname[:5] + firstname[:2] + "01"
