@@ -49,7 +49,7 @@
       .header {
         display: flex;
         justify-content: space-between;
-        padding: 10px 30px; /* Adjusted vertical padding */
+        padding: 20px 30px; /* Adjusted vertical padding */
         align-items: center;
         box-sizing: border-box;
         background-color: var(--header-bg-color);
@@ -105,6 +105,7 @@
         display: inline-block;
         width: 60px;
         height: 34px;
+        display: None;
       }
 
       .toggle-switch input {
@@ -293,7 +294,15 @@
     <!-- Header starts -->
     <div class="header">
       <div class="header__left">
-        <a href="/" style="font-family: 'Nabla'">hoopgle</a>
+        <div>
+          <a href="/">
+            <img
+              style="width: 85.4px; height: 40px"
+              src="{{ url_for('static', filename='logos/hoopgle-main.PNG') }}"
+              alt="Hoopgle Header"
+            />
+          </a>
+        </div>
       </div>
       <div class="header__right">
         <a style="color: white" href="#">Contact Us</a>

@@ -92,6 +92,7 @@
         display: inline-block;
         width: 60px;
         height: 34px;
+        display: none;
       }
 
       .toggle-switch input {
@@ -341,7 +342,14 @@
     <!-- Header starts -->
     <div class="header">
       <div class="header__left">
-        <a style="font-family: 'Nabla'" href="#">hoopgle</a>
+        <div>
+          <img
+            style="width: 85.4px; height: 40px"
+            src="{{ url_for('static', filename='logos/hoopgle-main.PNG') }}"
+            alt="Hoopgle Header"
+          />
+        </div>
+        <!--<a style="font-family: 'Nabla'" href="#">hoopgle</a>-->
       </div>
       <div class="header__right">
         <a href="#">Report Issue</a>
@@ -365,7 +373,14 @@
 
     <!-- Main body starts -->
     <div class="main_body">
-      <div class="hoopgle">hoopgle</div>
+      <div>
+        <img
+          style="width: 224.646px; height: 104.667px"
+          src="{{ url_for('static', filename='logos/hoopgle-main.PNG') }}"
+          alt="Hoopgle main"
+        />
+      </div>
+      <!--<div class="hoopgle">hoopgle</div>-->
 
       <!-- Search Starts -->
       <form id="search-form" action="/stat_search" method="POST">
@@ -629,7 +644,13 @@
       // Check saved theme preference on load
       document.addEventListener("DOMContentLoaded", () => {
         const savedTheme = localStorage.getItem("theme");
-        if (savedTheme === "dark-mode") {
+
+        if (savedTheme === "light-mode") {
+          // If explicitly set to light mode, apply it
+          body.classList.remove("dark-mode");
+          toggleSwitch.checked = false;
+        } else {
+          // Default to dark mode
           body.classList.add("dark-mode");
           toggleSwitch.checked = true;
         }

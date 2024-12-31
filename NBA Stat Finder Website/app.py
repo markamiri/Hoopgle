@@ -4,6 +4,8 @@ from fuzzywuzzy import fuzz, process
 import requests
 import numpy as np
 import os
+from rapidfuzz import process, fuzz
+
 
 import re
 from fuzzywuzzy import process
@@ -85,7 +87,38 @@ def home():
 @app.route('/stat_search', methods=['POST'])
 def stat_search1():
     query = request.form['query']
+    print("query is below")
     print(query)
+    tempTokens = query.split()
+    tempyear = tempTokens.pop()
+    temptype = tempTokens.pop()
+    templine = tempTokens.pop()
+    tempOU = tempTokens.pop()
+    tempcat = tempTokens.pop()
+    tempName = " ".join(tempTokens)  # Remaining tokens form the player's name
+    stat_categories = ["points", "rebounds", "assists"]
+    over_under_categories = ["over", "under"]
+    type_categories = ["regular", "playoffs"]
+
+  
+
+    # Step 3: Use RapidFuzz to find the most similar matches
+    def fuzzy_match(input_token, category_list):
+        match = process.extractOne(input_token, category_list, scorer=fuzz.ratio)
+        return match[0] if match and match[1] > 60 else input_token  # Threshold is 80%
+
+    # Match the components
+    tempcat = fuzzy_match(tempcat, stat_categories)      # Match stat category
+    tempOU = fuzzy_match(tempOU, over_under_categories)  # Match Over/Under
+    temptype = fuzzy_match(temptype, type_categories)    # Match type (Regular/Playoffs)
+
+    # Step 4: Print the results
+    print("Debugging Output:")
+    print(f"Year: {tempyear}")
+    print(f"Season Type: {temptype}")
+    print(f"Over/Under: {tempOU}")
+    print(f"Stat Category: {tempcat}")
+
 
     tokens = query.split()
     game_logs_html = None
@@ -93,6 +126,7 @@ def stat_search1():
     
 
     year, season, over_under, stat_cat, line, name = identify_query_components(query)
+    """
     print("Debugging Output:")
     print(f"Year: {year}")
     print(f"Season: {season}")
@@ -100,6 +134,7 @@ def stat_search1():
     print(f"Stat Category: {stat_cat}")
     print(f"Line: {line}")
     print(f"Name: {name}")
+    """
     name_capital = name.title()
     in_string = "in the"
     url_path_string = " ".join([name_capital, stat_cat, over_under, line, in_string, year, season])
