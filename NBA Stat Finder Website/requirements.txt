@@ -54,4 +54,5 @@ urllib3==2.2.3
 uvicorn==0.34.0
 webencodings==0.5.1
 Werkzeug==3.1.2
+rapidfuzz==3.11.0
 gunicorn
