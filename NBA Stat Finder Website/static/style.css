@@ -1,5 +1,9 @@
 /* Importing font from Google Fonts */
 
+@font-face {
+  font-family: "Nabla";
+  src: url("./fonts/Nabla-Regular.ttf") format("truetype");
+}
 body,
 html {
   height: 100%;
