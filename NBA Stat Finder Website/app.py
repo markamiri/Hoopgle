@@ -118,7 +118,7 @@ def stat_search1():
     if split == "regular":
         print("is this being called")
         player_url = regularURL(year, name, last_name)
-        result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data,  format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points ,propt_num, cat, ou, opp= tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key, year)
+        result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data,  format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points ,propt_num, cat, ou, opp, dates= tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key, year)
         print(format_percentage, format_percentage1, format_percentage2, format_percentage3, format_percentage4)
         return render_template(
         'result.html',
@@ -139,7 +139,7 @@ def stat_search1():
         format_percentage1=  format_percentage1,
         format_percentage2 = format_percentage2,
         format_percentage3 = format_percentage3,
-        format_percentage4 = format_percentage4, games = games, points= points, propt_num= propt_num, cat = cat, ou = ou, opp = opp,
+        format_percentage4 = format_percentage4, games = games, points= points, propt_num= propt_num, cat = cat, ou = ou, opp = opp, dates = dates
         )
     else:
         player_url = playoffURL(name, last_name)
@@ -326,7 +326,7 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
 
     temp_df = clean_dataframe(temp_df)
     games = temp_df['G'].tolist()
-
+    dates = temp_df['Date'].tolist()
     print("printing opp")
     print(opp)
     print("printing the games")
@@ -419,7 +419,7 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
     format_percentage = round(float(format_percentage), 2)  # Ensure it's a float with two decimal places
 
     # Return the result message and temp_df for further processing if needed
-    return  result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data, format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points, propt_num, cat,ou, opp
+    return  result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data, format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points, propt_num, cat,ou, opp, dates
 
 def getVariables(stat_cat, over_under, line):
     stat_dict = {

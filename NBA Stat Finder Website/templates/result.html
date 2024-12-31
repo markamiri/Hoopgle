@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation@1.0.0"></script>
 
-    
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
@@ -68,6 +67,8 @@
 
       .hoopgle {
         font-family: "Nabla", sans-serif;
+        font-style: normal;
+        font-weight: 400;
         font-size: 4rem;
         color: var(--text-color);
         margin-right: 20px;
@@ -292,7 +293,7 @@
     <!-- Header starts -->
     <div class="header">
       <div class="header__left">
-        <a href="/" style="font-family: Nabla">hoopgle</a>
+        <a href="/" style="font-family: 'Nabla'">hoopgle</a>
       </div>
       <div class="header__right">
         <a style="color: white" href="#">Contact Us</a>
@@ -482,12 +483,16 @@
             var backgroundColors = [];
             var borderColors = [];
             var opp = {{ opp | default([]) | tojson }};
+            var dates = {{ dates | default([]) | tojson }};
+
             games.reverse();
             points.reverse();
             opp.reverse();
+            dates.reverse();
             console.log("Points Array:", points);
             console.log("Games Array:", games);
             console.log("Opp Array:", opp);
+            const labels = dates.map((date, index) => `${date} ${opp[index]}`);
 
             points.forEach((point) => {
               if (ou === "over" || ou === "Over") {
@@ -517,7 +522,7 @@
             var pointsChart = new Chart(ctx, {
               type: "bar",
               data: {
-                labels: opp, // X-axis labels (Games)
+                labels: labels, // X-axis labels (Games)
                 datasets: [
                   {
                     label: cat,
