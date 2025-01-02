@@ -97,27 +97,34 @@ def stat_search1():
     tempcat = tempTokens.pop()
     tempName = " ".join(tempTokens)  # Remaining tokens form the player's name
     stat_categories = ["points", "rebounds", "assists"]
-    over_under_categories = ["over", "under"]
-    type_categories = ["regular", "playoffs"]
+    over_under_categories = ["Over", "Under"]
+    type_categories = ["Regular", "Playoffs"]
+    all_names = []
+    # Get the directory of the current script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # Construct the full path to playerName.txt
+    file_path = os.path.join(script_dir, 'playerName.txt')
+
+    # Open the file
+    with open(file_path, 'r') as file:
+        all_names = [line.strip() for line in file]
+
 
   
 
     # Step 3: Use RapidFuzz to find the most similar matches
     def fuzzy_match(input_token, category_list):
         match = process.extractOne(input_token, category_list, scorer=fuzz.ratio)
-        return match[0] if match and match[1] > 60 else input_token  # Threshold is 80%
+        return match[0] if match and match[1] > 50 else input_token  # Threshold is 80%
 
     # Match the components
     tempcat = fuzzy_match(tempcat, stat_categories)      # Match stat category
     tempOU = fuzzy_match(tempOU, over_under_categories)  # Match Over/Under
     temptype = fuzzy_match(temptype, type_categories)    # Match type (Regular/Playoffs)
-
+    tempName = fuzzy_match(tempName, all_names )
     # Step 4: Print the results
-    print("Debugging Output:")
-    print(f"Year: {tempyear}")
-    print(f"Season Type: {temptype}")
-    print(f"Over/Under: {tempOU}")
-    print(f"Stat Category: {tempcat}")
+
 
 
     tokens = query.split()
@@ -136,24 +143,35 @@ def stat_search1():
     print(f"Name: {name}")
     """
     name_capital = name.title()
+    tempName = tempName.title()
     in_string = "in the"
-    url_path_string = " ".join([name_capital, stat_cat, over_under, line, in_string, year, season])
+    print(f"tempName: {tempName}")
+    print(f"tempcat: {tempcat}")
+    print(f"tempOU: {tempOU}")
+    print(f"line: {line}")
+    print(f"in_string: {in_string}")
+    print(f"year: {year}")
+    print(f"temptype: {temptype}")
+    #url_path_string = " ".join([name_capital, stat_cat, over_under, line, in_string, year, season])
+    url_path_string = " ".join([tempName, tempcat, tempOU, templine, in_string, tempyear, temptype])
+
     print(url_path_string)
     last_name = name.split()[-1]
+    last_name = tempName.split()[-1]
+
  
-    print(f"Year: {year}, Season: {season}, Over/Under: {over_under}, Stat Cat: {stat_cat}, Line: {line}, Name: {name}")
+    print(f"all temp values Year: {tempyear}, Season: {temptype}, Over/Under: {tempOU}, Stat Cat: {tempcat}, Line: {templine}, Name: {tempName}")
 
-    split = regularOrPlayoffs(season)
-    cat_index, closest_ou_key, propt_num, closest_stat_key = getVariables(stat_cat, over_under, line)
+    split = regularOrPlayoffs(temptype)
+    #cat_index, closest_ou_key, propt_num, closest_stat_key = getVariables(stat_cat, over_under, line)
+    cat_index, closest_ou_key, propt_num, closest_stat_key = getVariables(tempcat, tempOU, templine)
 
-    print("split")
-    print(split)
 
 
     if split == "regular":
         print("is this being called")
-        player_url = regularURL(year, name, last_name)
-        result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data,  format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points ,propt_num, cat, ou, opp, dates= tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_stat_key, year)
+        player_url = regularURL(tempyear, tempName, last_name)
+        result_message, format_percentage, game_logs_html, last5_result, last5_df, last10_result, last10_df, last15_result, last15_df,  last20_result, last20_df, result_data,  format_percentage1, format_percentage2, format_percentage3, format_percentage4, games, points ,propt_num, cat, ou, opp, dates= tableScrape(player_url, cat_index, closest_ou_key, propt_num, tempName, closest_stat_key, year)
         print(format_percentage, format_percentage1, format_percentage2, format_percentage3, format_percentage4)
         return render_template(
         'result.html',
@@ -395,7 +413,9 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
     format_percentage = "{:.2f}".format(percentage)
     
     # Display the final result
-    result_message = f"{name} has covered the {closest_stat_key} {closest_ou_key} {propt_num}  line in {year} in {true_counter}/{active_games} ({format_percentage}%) games."
+    result_message = f"{name} has covered the {closest_ou_key} {propt_num} {closest_stat_key} line in {year} in {true_counter}/{active_games} ({format_percentage}%) games."
+    result_message = result_message.replace("'", "\\'")
+
     if float(format_percentage) >= 90:
         color_class = "high"
     elif 70 <= float(format_percentage) < 90:
@@ -444,13 +464,24 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
     #testing of last 5 percentages
     if active_games>=5:
         last5_result, last5_df, format_percentage1 =last5_percentage(df, closest_ou_key, closest_stat_key, propt_num, cat_index, name)
+
+
     if active_games>=10:
         last10_result, last10_df, format_percentage2 =last10_percentage(df, closest_ou_key, closest_stat_key, propt_num, cat_index, name)
+
+
+
     if active_games>=15:
         last15_result, last15_df, format_percentage3 =last15_percentage(df, closest_ou_key, closest_stat_key, propt_num, cat_index, name )
+
+
+
     #Error : 19 active games showing 20
     if active_games>=20:
         last20_result, last20_df, format_percentage4 =last20_percentage(df, closest_ou_key, closest_stat_key, propt_num, cat_index, name )
+
+
+
     format_percentage = round(float(format_percentage), 2)  # Ensure it's a float with two decimal places
 
     # Return the result message and temp_df for further processing if needed
@@ -582,6 +613,8 @@ def playoffTableScrape(player_url, cat_index, closest_ou_key, propt_num, name, c
     # Display the final result
     name = name.title()
     result_message = f"{name} has covered the {closest_ou_key} {propt_num} {closest_stat_key} line in {true_counter}/{active_games} ({format_percentage}%) total career playoff games"
+    result_message = result_message.replace("'", "\\'")
+
     print(result_message)
    
     temp_df =clean_dataframe_playoff(temp_df)
@@ -808,6 +841,7 @@ def last5_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, c
     formatted_percentage = "{:.0f}".format(percentage)
 
     result_string = (f"{name} game logs where he has covered {closest_ou_key} {propt_num} {closest_stat_key}. {true_counter}/5 ({formatted_percentage}%)")
+    result_string = result_string.replace("'", "\\'")
 
     
     temp_df = clean_dataframe(temp_df)
@@ -881,6 +915,7 @@ def last10_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
     formatted_percentage = "{:.0f}".format(percentage)
 
     result_string = (f"{name} game logs where he has covered {closest_ou_key} {propt_num} {closest_stat_key}. {true_counter}/10 ({formatted_percentage}%)")
+    result_string = result_string.replace("'", "\\'")
 
     temp_df = clean_dataframe(temp_df)
 
@@ -953,6 +988,7 @@ def last15_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
     formatted_percentage = "{:.0f}".format(percentage)
 
     result_string = (f"{name} game logs where he has covered {closest_ou_key} {propt_num} {closest_stat_key}. {true_counter}/15 ({formatted_percentage}%)")
+    result_string = result_string.replace("'", "\\'")
 
     temp_df = clean_dataframe(temp_df)
 
@@ -1026,6 +1062,7 @@ def last20_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
     formatted_percentage = "{:.0f}".format(percentage)
 
     result_string = (f"{name} game logs where he has covered {closest_ou_key} {propt_num} {closest_stat_key}. {true_counter}/20 ({formatted_percentage}%)")
+    result_string = result_string.replace("'", "\\'")
 
     temp_df = clean_dataframe(temp_df)
 
@@ -1108,6 +1145,8 @@ def latest_percentage(data_arrays, closest_ou_key, closest_stat_key, cat_index, 
     # print(f"{closest_playoff_name} game logs where he has covered {closest_ou_key} {propt_num} {closest_stat_key}. {len(latest_array)}/{latest_series}({formatted_percentage}%)")
     closest_playoff_name = closest_playoff_name.title()
     result_string = (f"{closest_playoff_name} playoff series vs {opp_team} where he has covered {closest_ou_key} {propt_num} {closest_stat_key}. {true_counter}/{latest_series}({formatted_percentage}%)")
+    result_string = result_string.replace("'", "\\'")
+
     print(result_string)
     #Should print the games where is was not covered 
     #luka doesnt work pj washington doesnt work name issue
@@ -1204,6 +1243,8 @@ def second_latest_percentage(data_arrays, closest_ou_key,closest_stat_key, cat_i
     temp_df =clean_dataframe_playoff(temp_df)
     closest_playoff_name = closest_playoff_name.title()
     result_string = (f"{closest_playoff_name} playoff series vs {opp_team} where he has covered {closest_ou_key} {propt_num} {closest_stat_key}. {true_counter}/{latest_series}({formatted_percentage}%)")
+    result_string = result_string.replace("'", "\\'")
+
     print(result_string)
 
 
@@ -1303,6 +1344,7 @@ def third_latest_percentage(data_arrays, closest_ou_key, closest_stat_key, cat_i
     closest_playoff_name = closest_playoff_name.title()
 
     result_string = (f"{closest_playoff_name} playoff series vs {opp_team} where he has covered {closest_ou_key} {propt_num} {closest_stat_key}. {true_counter}/{latest_series}({formatted_percentage}%)")
+    result_string = result_string.replace("'", "\\'")
 
 
     return end_index, game_logs_html, result_string
@@ -1358,6 +1400,8 @@ def fourth_latest_percentage(data_arrays, closest_ou_key, closest_stat_key,cat_i
         percentage = (true_counter / latest_series) * 100
         formatted_percentage = "{:.0f}".format(percentage)
         result_string = (f"{closest_playoff_name} playoff series vs {opp_team} where he has covered {closest_ou_key} {propt_num} {closest_stat_key}. {true_counter}/{latest_series}({formatted_percentage}%)")
+        result_string = result_string.replace("'", "\\'")
+
         temp_df = pd.DataFrame(latest_array, columns=data_arrays.columns)
         temp_df =clean_dataframe_playoff(temp_df)
 
