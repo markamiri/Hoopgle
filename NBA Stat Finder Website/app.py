@@ -1088,7 +1088,12 @@ def last20_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
 
 
 
-
+@app.errorhandler(500)
+def internal_server_error(e):
+    # Log the error (optional)
+    app.logger.error(f"Internal Server Error: {e}")
+    # Render the custom error page
+    return render_template('error.html'), 500
 
 
 #Playoff functions 

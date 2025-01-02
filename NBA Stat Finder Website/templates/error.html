@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Same root variables for light/dark modes */
+      :root {
+        --background-color: #ffffff;
+        --text-color: #000000;
+        --input-bg-color: #f1f1f1;
+        --header-bg-color: #f8f8f8;
+        --button-bg-color: grey;
+        --button-text-color: white;
+        --button-active-bg-color: orange;
+        --table-header-bg-color: #f2f2f2;
+      }
+
+      body.dark-mode {
+        --background-color: #121212;
+        --text-color: #ffffff;
+        --input-bg-color: #333333;
+        --header-bg-color: #242424;
+        --button-bg-color: #444444;
+        --button-text-color: #ffffff;
+        --button-active-bg-color: #ff5722;
+        --table-header-bg-color: #333333;
+      }
+
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box; /* Ensure padding is included in width calculations */
+      }
+
+      .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 30px; /* Adjusted vertical padding */
+        align-items: center;
+        box-sizing: border-box;
+        background-color: var(--header-bg-color);
+        height: 80px; /* Slightly increased the height */
+      }
+
+      .header__left {
+        display: flex;
+        align-items: flex-end; /* Align bottom to balance spacing */
+      }
+
+      .header__right {
+        margin-left: auto;
+      }
+
+      .hoopgle {
+        font-family: "Nabla", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 4rem;
+        color: var(--text-color);
+        margin-right: 20px;
+        padding-top: 10px; /* Added padding to give it space from the top */
+        text-decoration: none; /* Ensure no underline */
+      }
+
+      .game-logs-table {
+        width: 90%;
+        max-width: 1000px;
+        margin: 0px auto;
+        border-collapse: collapse;
+        font-size: 20px;
+        transform: scale(0.7);
+        transform-origin: top;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .game-logs-table th,
+      .game-logs-table td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+        text-align: left;
+        color: var(--text-color);
+      }
+
+      .game-logs-table th {
+        background-color: var(--table-header-bg-color);
+      }
+
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        display: None;
+      }
+
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .chart-container {
+        width: 1000px;
+        height: 500px;
+        max-width: 800px;
+        overflow-x: scroll;
+        padding-bottom: 15px;
+      }
+      .chart-container-body {
+        height: 475px;
+      }
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 3.9px; /* Adjusts scrollbar width */
+        height: 10px;
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent; /* Optional: transparent background for track */
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background-color: rgba(
+          68,
+          68,
+          68,
+          255
+        ); /* Color of the scrollbar thumb */
+        border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+      }
+
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #555; /* Slightly lighter color on hover for effect */
+      }
+
+      .header-container {
+        width: 100%; /* Ensure it takes up full width of the parent */
+        max-width: 100%; /* Prevent it from overflowing */
+        overflow-wrap: break-word; /* Ensure long text wraps */
+        margin: 0 auto; /* Center the text */
+        padding: 10px; /* Add some padding for spacing */
+        text-align: center;
+      }
+
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+
+      input:checked + .slider {
+        background-color: var(--button-active-bg-color);
+      }
+
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+
+      .tab {
+        overflow: hidden;
+        border-bottom: 1px solid #ccc;
+        margin-top: 15px;
+      }
+      .tab button {
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+      }
+      .tab button:hover {
+        background-color: #ddd;
+      }
+      .tab button.active {
+        background-color: #ccc;
+      }
+      .tabcontent {
+        display: none;
+        padding: 30px 12px;
+        border-top: none;
+      }
+      .tabcontent.active {
+        display: block;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .chart-container {
+          width: 1000px;
+          height: 430px;
+          max-width: 330px;
+          overflow-x: auto;
+          overflow-y: hidden;
+          padding-bottom: 15px;
+          -webkit-overflow-scrolling: touch; /* Enables smooth scrolling for mobile */
+        }
+        .chart-container-body {
+          height: 430px;
+        }
+
+        .tab {
+          flex-direction: column; /* Stack buttons vertically */
+          align-items: center; /* Center items in the middle */
+          margin-left: 75px;
+        }
+
+        .tab button {
+          width: 80%; /* Buttons take up 80% of the screen width */
+          text-align: center; /* Center-align text inside buttons */
+        }
+        .header-container {
+          margin-top: 20px;
+          width: 70%;
+          margin-bottom: 20px;
+        }
+
+        .game-logs-table {
+          width: 100%; /* Makes table responsive */
+          max-width: 430px; /* Limits the maximum width */
+          overflow-x: auto; /* Adds horizontal scrolling if needed */
+          border-collapse: collapse; /* Ensures borders collapse for cleaner layout */
+          margin-left: -150px;
+        }
+        a {
+          text-decoration: none; /* Remove underline by default */
+          color: white; /* Ensure the text is white */
+        }
+
+        a:hover {
+          text-decoration: underline; /* Add underline on hover */
+        }
+
+        .game-logs-table th,
+        .game-logs-table td {
+          padding: 8px; /* Adds padding for better readability */
+          text-align: center; /* Centers text */
+        }
+        #RegularGameLogs {
+          width: 100%; /* Ensures the parent container uses the full width */
+          max-width: 450px; /* Matches table size for consistent layout */
+          overflow-x: auto; /* Allows horizontal scrolling for large tables */
+        }
+
+        #Last5 {
+          width: 100%; /* Ensures the parent container uses the full width */
+          max-width: 450px; /* Matches table size for consistent layout */
+          overflow-x: auto; /* Allows horizontal scrolling for large tables */
+        }
+        #Last10 {
+          width: 100%; /* Ensures the parent container uses the full width */
+          max-width: 450px; /* Matches table size for consistent layout */
+          overflow-x: auto; /* Allows horizontal scrolling for large tables */
+        }
+
+        #Last15 {
+          width: 100%; /* Ensures the parent container uses the full width */
+          max-width: 450px; /* Matches table size for consistent layout */
+          overflow-x: auto; /* Allows horizontal scrolling for large tables */
+        }
+
+        #Last20 {
+          width: 100%; /* Ensures the parent container uses the full width */
+          max-width: 450px; /* Matches table size for consistent layout */
+          overflow-x: auto; /* Allows horizontal scrolling for large tables */
+        }
+      }
+    </style>
+    <title>Hoopgle Error</title>
+  </head>
+
+  <body class="dark-mode">
+    <div class="header">
+      <div class="header__left">
+        <div>
+          <a href="/">
+            <img
+              style="width: 85.4px; height: 40px"
+              src="{{ url_for('static', filename='logos/hoopgle-main.png') }}"
+              alt="Hoopgle Header"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="header__right">
+        <a style="color: white" href="#">Contact Us</a>
+        <!-- Dark Mode Toggle Switch -->
+        <label class="toggle-switch">
+          <input type="checkbox" id="themeToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+      "
+    >
+      <div>
+        <div>
+          <a href="/">
+            <img
+              style="width: 224.646px; height: 104.667px"
+              src="{{ url_for('static', filename='logos/hoopgle-main.png') }}"
+              alt=""
+          /></a>
+        </div>
+        <div style="font-size: 28px; font-family: sans-serif">
+          Technical issue, our team will fix this on the next possession
+        </div>
+      </div>
+      <div>
+        <img
+          style="width: 500px; height: 333px"
+          src="{{ url_for('static', filename='playerphoto/benerror.png') }}"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>
