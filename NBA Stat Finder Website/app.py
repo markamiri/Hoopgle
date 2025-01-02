@@ -5,11 +5,12 @@ import requests
 import numpy as np
 import os
 from rapidfuzz import process, fuzz
+from bs4 import BeautifulSoup
 
 
 import re
 from fuzzywuzzy import process
-
+import traceback
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
@@ -220,7 +221,35 @@ def stat_search1():
         
         )
 
+@app.route('/injuries', methods=['GET'])
+def get_injury_reports():
+    url = "https://www.rotowire.com/basketball/news.php?view=injuries"
+    response = requests.get(url)
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, 'html.parser')
+        player_links = soup.find_all('a', class_='news-update__player-link')
+        player_desc = soup.find_all('a', class_='news-update__headline')
+        date = soup.find_all('div', class_='news-update__timestamp')
+        player_desc_news = soup.find_all('div', class_='news-update__news')
 
+        # Build the injury report data
+        injury_data = []
+        for i in range(len(player_links)):
+            player_name = player_links[i].text.strip() if i < len(player_links) else "Unknown Player"
+            description = player_desc[i].text.strip() if i < len(player_desc) else "No Description"
+            timestamp = date[i].text.strip() if i < len(date) else "No Date"
+            news = player_desc_news[i].text.strip() if i < len(player_desc_news) else "No Additional News"
+
+            injury_data.append({
+                "player_name": player_name,
+                "description": description,
+                "timestamp": timestamp,
+                "news": news
+            })
+
+        return jsonify(injury_data)
+    else:
+        return jsonify({"error": "Failed to retrieve the page."}), 500
 @app.route('/get-player-names', methods=['GET'])
 def get_player_names():
     # File path to playerName.txt
@@ -461,6 +490,7 @@ def tableScrape(player_url, cat_index, closest_ou_key, propt_num, name, closest_
     last15_result = last15_df = format_percentage3 = None
     last20_result = last20_df = format_percentage4 = None
 
+ 
     #testing of last 5 percentages
     if active_games>=5:
         last5_result, last5_df, format_percentage1 =last5_percentage(df, closest_ou_key, closest_stat_key, propt_num, cat_index, name)
@@ -803,7 +833,7 @@ def last5_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, c
 
     while i> end_index: 
        
-        if  str(data_arrays.loc[i, 'G']) == '0' or str( data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress':
+        if  str(data_arrays.loc[i, 'G']) == '0' or str( data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress' or str(data_arrays.loc[i, 'PTS']) =='Not With Team':
             end_index -=1
         else:
             if closest_ou_key == "over":
@@ -877,7 +907,7 @@ def last10_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
     end_index = len(data_arrays) - 11 # Ensure we don't go out of bounds
 
     while i> end_index: 
-        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Play':
+        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Play' or str(data_arrays.loc[i, 'PTS']) =='Not With Team' :
             end_index -=1
         else:
             if closest_ou_key == "over":
@@ -950,7 +980,7 @@ def last15_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
     end_index = len(data_arrays) - 16 # Ensure we don't go out of bounds
 
     while i> end_index: 
-        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Play':
+        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Play' or str(data_arrays.loc[i, 'PTS']) =='Not With Team':
             end_index -=1
         else:
             if closest_ou_key == "over":
@@ -1024,7 +1054,7 @@ def last20_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
     end_index = len(data_arrays) - 21 # Ensure we don't go out of bounds
 
     while i> end_index: 
-        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Play':
+        if str(data_arrays.loc[i, 'PTS']) == 'Inactive' or str(data_arrays.loc[i, 'PTS']) == 'PTS' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Dress' or str(data_arrays.loc[i, 'PTS']) == 'Did Not Play' or str(data_arrays.loc[i, 'PTS']) =='Not With Team':
             end_index -=1
         else:
             if closest_ou_key == "over":
@@ -1090,8 +1120,20 @@ def last20_percentage(data_arrays, closest_ou_key, closest_stat_key, propt_num, 
 
 @app.errorhandler(500)
 def internal_server_error(e):
-    # Log the error (optional)
-    app.logger.error(f"Internal Server Error: {e}")
+    # Log the error message and stack trace
+    error_message = f"Internal Server Error: {e}"
+    stack_trace = traceback.format_exc()
+
+    # Log request details (if available)
+    request_info = f"""
+    Request Info:
+    - Method: {request.method}
+    - Path: {request.path}
+    - Form Data: {request.form.to_dict() if request.form else 'None'}
+    - Query Parameters: {request.args.to_dict() if request.args else 'None'}
+    """
+    app.logger.error(f"{error_message}\n{stack_trace}\n{request_info}")
+
     # Render the custom error page
     return render_template('error.html'), 500
 

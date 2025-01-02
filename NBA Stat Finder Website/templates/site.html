@@ -372,123 +372,154 @@
     <!-- Header ends -->
 
     <!-- Main body starts -->
-    <div class="main_body">
-      <div>
-        <img
-          style="width: 224.646px; height: 104.667px"
-          src="{{ url_for('static', filename='logos/hoopgle-main.png') }}"
-          alt="Hoopgle main"
-        />
-      </div>
-      <!--<div class="hoopgle">hoopgle</div>-->
-
-      <!-- Search Starts -->
-      <form id="search-form" action="/stat_search" method="POST">
-        <div class="search__input">
-          <span style="display: none" id="dynamic-label" class="dynamic-label"
-            >Player Name:</span
-          >
-          <input
-            type="text"
-            id="search-box"
-            class="search-box"
-            name="query"
-            placeholder="Search player stats"
-            onkeydown="handleKeyDown(event)"
-            oninput="updateLabel()"
-            style="display: none"
+    <div style="display: flex">
+      <div
+        class="main_body"
+        style="flex: 1; padding-top: 150px; padding-left: 10px"
+      >
+        <div>
+          <img
+            style="width: 224.646px; height: 104.667px"
+            src="{{ url_for('static', filename='logos/hoopgle-main.png') }}"
+            alt="Hoopgle main"
           />
-          <span
-            style="display: none"
-            class="material-symbols-outlined"
-            onclick="statSearch()"
-            >search</span
-          >
         </div>
+        <!--<div class="hoopgle">hoopgle</div>-->
 
-        <div id="new-search-container" class="new-search-container">
-          <input
-            type="text"
-            list="playerNames"
-            class="playerNames"
-            placeholder="Player Name"
-          />
-          <datalist id="playerNames"> </datalist>
+        <!-- Search Starts -->
+        <form id="search-form" action="/stat_search" method="POST">
+          <div class="search__input">
+            <span style="display: none" id="dynamic-label" class="dynamic-label"
+              >Player Name:</span
+            >
+            <input
+              type="text"
+              id="search-box"
+              class="search-box"
+              name="query"
+              placeholder="Search player stats"
+              onkeydown="handleKeyDown(event)"
+              oninput="updateLabel()"
+              style="display: none"
+            />
+            <span
+              style="display: none"
+              class="material-symbols-outlined"
+              onclick="statSearch()"
+              >search</span
+            >
+          </div>
 
-          <input
-            class="playerProps"
-            type="text"
-            list="playerProps"
-            placeholder="Player Prop"
-          />
-          <datalist id="playerProps">
-            <option value="Points">Points</option>
-            <option value="Rebounds">Rebounds</option>
-            <option value="Assists">Assists</option>
-            <option value="Three pointers">Three pointers</option>
-            <option value="Double Double">Double Double</option>
-            <option value="Triple Double">Triple Double</option>
-            <option value="Pts + Ast">Pts + Ast</option>
-            <option value="Pts + Reb">Pts + Reb</option>
-            <option value="Pts + Reb + Ast">Pts + Reb + Ast</option>
-            <option value="Ast + Reb">Ast + Reb</option>
-          </datalist>
+          <div id="new-search-container" class="new-search-container">
+            <input
+              type="text"
+              list="playerNames"
+              class="playerNames"
+              placeholder="Player Name"
+            />
+            <datalist id="playerNames"> </datalist>
 
-          <input
-            class="playerOU"
-            type="text"
-            list="playerOU"
-            placeholder="Over/Under"
-          />
-          <datalist id="playerOU">
-            <option value="Over">Over</option>
-            <option value="Under">Under</option>
-          </datalist>
+            <input
+              class="playerProps"
+              type="text"
+              list="playerProps"
+              placeholder="Player Prop"
+            />
+            <datalist id="playerProps">
+              <option value="Points">Points</option>
+              <option value="Rebounds">Rebounds</option>
+              <option value="Assists">Assists</option>
+              <option value="Three pointers">Three pointers</option>
+              <option value="Double Double">Double Double</option>
+              <option value="Triple Double">Triple Double</option>
+              <option value="Pts + Ast">Pts + Ast</option>
+              <option value="Pts + Reb">Pts + Reb</option>
+              <option value="Pts + Reb + Ast">Pts + Reb + Ast</option>
+              <option value="Ast + Reb">Ast + Reb</option>
+            </datalist>
 
-          <input type="text" list="line" placeholder="Line" class="line" />
-          <datalist id="line"></datalist>
+            <input
+              class="playerOU"
+              type="text"
+              list="playerOU"
+              placeholder="Over/Under"
+            />
+            <datalist id="playerOU">
+              <option value="Over">Over</option>
+              <option value="Under">Under</option>
+            </datalist>
 
-          <div class="inThe">In The</div>
+            <input type="text" list="line" placeholder="Line" class="line" />
+            <datalist id="line"></datalist>
 
-          <input
-            type="text"
-            list="seasonType"
-            placeholder="Regular/Playoffs"
-            class="seasonType"
-            id="seasonTypeInput"
-          />
-          <datalist id="seasonType">
-            <option value="Regular">Regular season</option>
-            <option value="Playoff">Playoffs</option>
-          </datalist>
+            <div class="inThe">In The</div>
 
-          <input class="Year" type="text" list="year" placeholder="Year" />
-          <datalist id="year">
-            <option value="2025">2025</option>
-            <option value="2024">2024</option>
-          </datalist>
-          <span
-            class="material-symbols-outlined questionMark"
-            onclick="statSearch2()"
-            >question_mark</span
-          >
-        </div>
+            <input
+              type="text"
+              list="seasonType"
+              placeholder="Regular/Playoffs"
+              class="seasonType"
+              id="seasonTypeInput"
+            />
+            <datalist id="seasonType">
+              <option value="Regular">Regular season</option>
+              <option value="Playoff">Playoffs</option>
+            </datalist>
 
-        <div class="search__buttons">
+            <input class="Year" type="text" list="year" placeholder="Year" />
+            <datalist id="year">
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+            </datalist>
+            <span
+              class="material-symbols-outlined questionMark"
+              onclick="statSearch2()"
+              >question_mark</span
+            >
+          </div>
+
+          <div style="display: none" class="search__buttons">
+            <button
+              type="submit"
+              class="search-button inactive"
+              id="stat-search-btn"
+              disabled
+            >
+              Stat Search
+            </button>
+            <button type="button" class="search-button" onclick="statSearch()">
+              I'm Feeling Lucky
+            </button>
+          </div>
+        </form>
+        <div style="margin-top: 100px; margin-left: 930px; display: flex">
           <button
-            type="submit"
-            class="search-button inactive"
-            id="stat-search-btn"
-            disabled
+            class="injury-btn"
+            style="
+              background-color: rgb(36, 36, 36);
+              width: 53px;
+              height: 53px;
+              padding: 2px;
+            "
+            onclick="toggleInjuryReport()"
           >
-            Stat Search
-          </button>
-          <button type="button" class="search-button" onclick="statSearch()">
-            I'm Feeling Lucky
+            <img
+              style="width: 45px; height: 45px"
+              src="{{ url_for('static', filename='logos/injury-btn.png') }}"
+              alt=""
+            />
           </button>
         </div>
-      </form>
+      </div>
+      <div
+        class="injury-report"
+        style="flex: 0; height: 481px; overflow-y: auto"
+      >
+        Injury Report
+        <div class="injury-report-cont"></div>
+      </div>
     </div>
+
     <!-- Main body ends -->
     <script>
       function statSearch2() {
@@ -519,6 +550,75 @@
         form.appendChild(hiddenInput);
         document.body.appendChild(form);
         form.submit();
+      }
+    </script>
+
+    <script>
+      let lastFetchTime = null; // Track the timestamp of the last fetch
+      let cachedData = null; // Cache the fetched data
+
+      async function toggleInjuryReport() {
+        const injuryReport = document.querySelector(".injury-report");
+        if (injuryReport) {
+          // Check current flex value and toggle between 0 and 0.8
+          const currentFlex = window.getComputedStyle(injuryReport).flexGrow;
+          if (currentFlex === "0") {
+            injuryReport.style.flex = "0.8"; // Expand injury report
+            await fetchInjuryReports(); // Fetch and display reports
+          } else {
+            injuryReport.style.flex = "0"; // Collapse injury report
+            injuryReport.innerHTML = ""; // Clear the content
+          }
+        }
+      }
+
+      async function fetchInjuryReports() {
+        const now = Date.now(); // Get the current timestamp
+        const twoMinutes = 2 * 60 * 1000; // Two minutes in milliseconds
+
+        if (lastFetchTime && now - lastFetchTime < twoMinutes) {
+          // If the last fetch was within 2 minutes, use cached data
+          console.log("Using cached data");
+          displayInjuryReports(cachedData);
+          return;
+        }
+
+        try {
+          const response = await fetch("/injuries"); // Call the Flask API
+          if (!response.ok) {
+            throw new Error("Failed to fetch injury reports");
+          }
+          const data = await response.json();
+
+          // Update the last fetch time and cache the data
+          lastFetchTime = now;
+          cachedData = data;
+
+          // Display the fetched data
+          displayInjuryReports(data);
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+
+      function displayInjuryReports(data) {
+        const container = document.querySelector(".injury-report");
+
+        // Clear the existing content
+        container.innerHTML = "";
+
+        // Append each injury report
+        data.forEach((report) => {
+          const reportDiv = document.createElement("div");
+          reportDiv.innerHTML = `
+      <p><strong>Player:</strong> ${report.player_name}</p>
+      <p><strong>Description:</strong> ${report.description}</p>
+      <p><strong>Date:</strong> ${report.timestamp}</p>
+      <p><strong>News:</strong> ${report.news}</p>
+      <hr />
+    `;
+          container.appendChild(reportDiv);
+        });
       }
     </script>
 
