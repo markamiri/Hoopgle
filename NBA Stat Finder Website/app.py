@@ -6,6 +6,8 @@ import numpy as np
 import os
 from rapidfuzz import process, fuzz
 from bs4 import BeautifulSoup
+import unicodedata
+
 
 
 import re
@@ -323,6 +325,11 @@ def regularURL(year, name, last_name):
         player_names.add(full_name)
 
     closest_name, _ = process.extractOne(name, player_names, scorer=fuzz.token_sort_ratio)
+    def remove_diacritics(input_str):
+        normalized = unicodedata.normalize('NFKD', input_str)  # Normalize Unicode
+        return ''.join(c for c in normalized if not unicodedata.combining(c))  # Remove diacritics
+    closest_name = remove_diacritics(closest_name)
+
     firstname, lastname = closest_name.split()
     url_playername = None
     if lastname[:5] + firstname[:2] == "JohnsCa" or lastname[:5] + firstname[:2] == "JacksJa" or lastname[:5] + firstname[:2] == "MilleBr" or lastname[:5] + firstname[:2] == "BrownJa" or lastname[:5] + firstname[:2] == "DavisAn":
